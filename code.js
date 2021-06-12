@@ -1,1 +1,1 @@
-//Amazin code
+//Amazing code
