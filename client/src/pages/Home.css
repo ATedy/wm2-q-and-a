@@ -10,6 +10,21 @@
     background-color: yellow;
 }
 
-.loginForm{
-    color: blue;
+.loginContainer, .signUpContainer{
+    width: 22%;
+    text-align: center;
+    margin: 7% auto; 
+    padding: 1em;
+    border: 1px solid black;
+}
+
+.loginForm, .signUpForm{
+   display: flex;
+   flex-direction: column;
+  }
+
+  form input {
+      height: 2em;
+      margin: 0.5em;
+      border-radius: 3px;
   }

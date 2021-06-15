@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const Login = () => (
-  <div>
+  <div className="loginContainer">
     <form className="loginForm">
       <h1>Log in</h1>
       <p>Log in to Ask a Question</p>
@@ -11,7 +11,9 @@ const Login = () => (
       <input type="submit" value="Log in" />
     </form>
     <p>Forgot your password?</p>
-		<p>Don't have an account?Sign up</p>
+    <p>
+      Don't have an account?<Link to="/SignUp">Sign Up</Link>
+    </p>
   </div>
 );
 
