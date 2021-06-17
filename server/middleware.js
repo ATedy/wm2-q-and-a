@@ -30,6 +30,7 @@ export const logErrors = () => (err, _, res, next) => {
 
 export const pushStateRouting = (apiRoot, staticDir) => (req, res, next) => {
 	if (req.method === "GET" && !req.url.startsWith(apiRoot)) {
+		console.log({staticDir})
 		return res.sendFile(path.join(staticDir, "index.html"));
 	}
 	next();

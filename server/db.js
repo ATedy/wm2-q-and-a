@@ -2,7 +2,7 @@ import { Pool } from "pg";
 
 const dbUrl = process.env.DATABASE_URL || "postgres://localhost:5432/qadata";
 
-const pool = new Pool({
+export const pool = new Pool({
 	connectionString: dbUrl,
 	connectionTimeoutMillis: 5000,
 });
@@ -21,4 +21,7 @@ export const connectDb = async () => {
 
 export const disconnectDb = () => pool.close();
 
-export default { query: pool.query };
+//export default { query: pool.query };
+
+//export default {query: (text, params, callback) => pool.query(text, params, callback)};
+
