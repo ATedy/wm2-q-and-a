@@ -1,6 +1,9 @@
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
-const Login = () => (
+const Login = () => { 
+
+  let history = useHistory();
+  return ( 
   <div className="signUpContainer">
     <form className="signUpForm">
       <h1>Sign Up</h1>
@@ -10,12 +13,13 @@ const Login = () => (
       <input type="text" placeholder="Username"  />
       <input type="text" placeholder="Email"  />
       <input type="Password" placeholder="password"  />
-      <input type="submit" value="Sign Up" />
+      <button type="submit" onClick={() =>history.push("/")}>Sign Up</button>
     </form>
     <p>
       Already have an account? <Link to="/login">Login</Link>
     </p>
   </div>
 );
+  }
 
 export default Login;
