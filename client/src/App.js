@@ -1,8 +1,10 @@
+
 import {Route, Switch, Link} from "react-router-dom";
 
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+
 
 const App = () => {
   return (
@@ -32,5 +34,6 @@ const App = () => {
     </main>
   );
 };
+
 
 export default App;
