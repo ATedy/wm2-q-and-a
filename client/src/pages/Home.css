@@ -1,11 +1,80 @@
 .logo {
-    width: 100px;
+  width: 100px;
 }
 
 .message {
-    color: blue;
+  color: blue;
 }
 
 .message:hover {
-    background-color: yellow;
+  background-color: yellow;
+}
+.navBar{
+    
+    
+    margin: 2% auto;
+    width: 60%;
+    padding: 0.1%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+.navBar p, .navLinks {
+    color: #fb454e;
+}
+.navLinks{
+    margin-top: 0.3em;
+}
+.navBar p{
+    font-weight: 400;
+    font-size: 1.4em;
+}
+
+
+.sectionContainer {
+  margin: 2% auto;
+  width: 60%;
+  border: 1px solid black;
+  padding: 10px;
+}
+.sectionContainer button {
+  width: 25%;
+  border-radius: 3px;
+}
+
+section button {
+  background-color: #fb454e;
+  color: white;
+  border: none;
+}
+
+section:nth-child(2) {
+  background-color: #fb454e;
+  color: white;
+}
+section:nth-child(2) button {
+   color: #fb454e;
+    background-color: white;
+  }
+
+
+.loginContainer,
+.signUpContainer {
+  width: 30%;
+  text-align: center;
+  margin: 7% auto;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.loginForm,
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form button {
+  height: 2em;
+  margin: 0.5em;
+  border-radius: 3px;
 }
