@@ -11,7 +11,7 @@
 }
 
 .loginContainer, .signUpContainer{
-    width: 22%;
+    width: 30%;
     text-align: center;
     margin: 7% auto; 
     padding: 1em;
@@ -19,6 +19,7 @@
 }
 
 .loginForm, .signUpForm{
+    
    display: flex;
    flex-direction: column;
   }

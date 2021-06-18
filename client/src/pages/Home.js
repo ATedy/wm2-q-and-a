@@ -16,7 +16,8 @@ export function Home() {
 				return res.json();
 			})
 			.then((body) => {
-				setMessage(body.message);
+				console.log(body[0]);
+				setMessage(body[0].questions);
 			})
 			.catch((err) => {
 				console.error(err);

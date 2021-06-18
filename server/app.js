@@ -22,6 +22,7 @@ if (app.get("env") === "production") {
 
 app.use(apiRoot, router);
 
+
 app.use(express.static(staticDir));
 app.use(pushStateRouting(apiRoot, staticDir));
 
