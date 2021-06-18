@@ -7,9 +7,9 @@ const Login = () => (
       <p>
         Join the community to Ask and Answer questions from fellow developers
       </p>
-      <input type="text" placeholder="Username" required />
-      <input type="text" placeholder="Email" required />
-      <input type="Password" placeholder="password" required />
+      <input type="text" placeholder="Username"  />
+      <input type="text" placeholder="Email"  />
+      <input type="Password" placeholder="password"  />
       <input type="submit" value="Sign Up" />
     </form>
     <p>

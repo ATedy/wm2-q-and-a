@@ -48,11 +48,11 @@ export function Home() {
 				</section>
 				<section className="sectionContainer">
 					<h3>Latest questions</h3>
-					<ul>
-						<li>Question-1</li>
-						<li>Question-2</li>
-						<li>Question-3</li>
-						<li>Question-4</li>
+					<ul className="list-group">
+						<li className="list-group-item list-group-item-action">Question-1</li>
+						<li className="list-group-item list-group-item-action">Question-2</li>
+						<li className="list-group-item list-group-item-action">Question-3</li>
+						<li className="list-group-item list-group-item-action">Question-4</li>
 					</ul>
 				</section>
 			</div>
