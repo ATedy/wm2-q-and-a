@@ -9,6 +9,18 @@
 .message:hover {
     background-color: yellow;
 }
+.sectionContainer{
+    margin: 2% auto;
+    width: 60%;
+    border: 2px solid black;
+    padding: 10px;
+    }
+.sectionContainer button{
+    width: 25%;
+    border-radius: 3px;
+}
+
+
 
 .loginContainer, .signUpContainer{
     width: 30%;
