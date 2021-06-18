@@ -46,6 +46,7 @@ section button {
   background-color: #fb454e;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 section:nth-child(2) {
@@ -55,6 +56,10 @@ section:nth-child(2) {
 section:nth-child(2) button {
    color: #fb454e;
     background-color: white;
+  }
+
+  ul li{
+    cursor: pointer;
   }
 
 
