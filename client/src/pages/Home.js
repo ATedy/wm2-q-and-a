@@ -26,10 +26,13 @@ export function Home() {
 
 	return (
 		<main role="main">
-			<nav>
+			<nav className="navBar">
 				<p>Quest</p>
-				<Link className="mr-3" to="/SignUp">Sign Up</Link>
-				<Link to="/login">Login</Link>
+				<div >
+				<Link className="mr-3 navLinks" to="/SignUp">Sign Up</Link>
+				<Link className="navLinks" to="/login">Login</Link>
+				</div>
+				
 			</nav>
 			<div>
 				{/* <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
