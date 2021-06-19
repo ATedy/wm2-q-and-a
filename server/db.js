@@ -14,12 +14,6 @@ if (process.env.DATABASE_URL) {
 }
 
 
-// const dbUrl = process.env.DATABASE_URL || "postgres://localhost:5432/qadata";
-
-// export const pool = new Pool({
-// 	connectionString: dbUrl,
-// 	connectionTimeoutMillis: 5000,
-// });
 
 
  else  {// local
@@ -27,7 +21,7 @@ if (process.env.DATABASE_URL) {
 	config = {
 		user: process.env.DB_USER,
 		host: process.env.DB_HOST,
-		database: "q_a",
+		database: "qadata",
 		password: process.env.DB_PASS,
 		port: 5432,
 	};
@@ -48,9 +42,4 @@ export const connectDb = async () => {
 export const disconnectDb = () => pool.close();
 export default { query: pool.query.bind(pool) };
 
-
-
-//export default { query: pool.query };
-
-//export default {query: (text, params, callback) => pool.query(text, params, callback)};
 
