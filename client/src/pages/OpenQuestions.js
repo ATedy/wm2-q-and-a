@@ -20,6 +20,7 @@ const OpenQuestions = () => {
                 {questions.map((question, index) => {
                     <li index={index}>
                         {question}
+                    {/* not returning question? */}
                     </li>
                 })}
             </ul>

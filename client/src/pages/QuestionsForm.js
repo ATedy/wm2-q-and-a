@@ -1,7 +1,8 @@
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import React, {useState} from 'react';
 
 const QuestionsForm = () => {
+    let history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
@@ -43,7 +44,7 @@ const QuestionsForm = () => {
         <h3>Body</h3>
         <h6>
           Include all the information someone needs to answer your question.
-          Summarise the problem and what you have tried to resolve it.{' '}
+          Sumarise the problem and what you have tried to resolve it.{' '}
         </h6>
         <input
           type="text"
@@ -52,7 +53,7 @@ const QuestionsForm = () => {
         />
         <h3>Upload file</h3>
         <h6>
-          Upload a screengrab or a text file so someone can better understand
+          Upload a screenshots or a text file so someone can better understand
           the issue.
         </h6>
         <input type="img" />
@@ -65,13 +66,12 @@ const QuestionsForm = () => {
           onChange={handleTags}
         />
       </form>
-      <button type="submit" onClick={handleSubmit}>
+      <button className="btn" type="submit" onClick={handleSubmit}>
         Ask!
       </button>
-      <button type="submit">Ask as Anonymous</button>
-      <Link to="/home">
-        <button type="submit">Cancel</button>
-      </Link>
+      <button className="btn" type="submit" onClick={() => history.push('/')}>
+        Cancel
+      </button>
     </div>
   );
 };
