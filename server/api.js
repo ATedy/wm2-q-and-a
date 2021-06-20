@@ -21,11 +21,11 @@ router.get('/questions', function (req, res) {
 
 // Create new questions
 router.post('/questions', (req, res) => {
-  const newId = req.body.id;
   const newTitle = req.body.title;
   const newBody = req.body.body;
+  const newTags = req.body.tags;
   pool
-    .query('SELECT * FROM questions WHERE questions.title=$1', [newId])
+    .query('SELECT * FROM questions WHERE questions.title=$1', [newTitle])
     .then((result) => {
       if (result.rows.length > 0) {
         return res
@@ -33,9 +33,9 @@ router.post('/questions', (req, res) => {
           .send('A question with the same name already exists!');
       } else {
         const query =
-          'INSERT INTO questions (id, title, body) VALUES ($1, $2, $3)';
+          'INSERT INTO questions ( title, body, tags) VALUES ($1, $2, $3)';
         pool
-          .query(query, [newId, newTitle, newBody])
+          .query(query, [ newTitle, newBody, newTags])
           .then(() => res.send('Question created!'))
           .catch((e) => console.error({message: 'Your question could not be saved'}));
       }
@@ -70,22 +70,7 @@ router.delete('/questions/:questionsId', (req, res) => {
   }
 });
 
-// import { Router } from "express";
-// import pool from "./db";
-// const router = new Router();
-// const db = require("./db");
-// // const customerSelectQuery = `select * from questions`;
-// router.get("/", (_, res) => {
-// 	// res.json({ message: "Hello, world!" });
 
-// 	pool
-// 	.query('SELECT * FROM questions;')
-// 	.then((result) =>{
-// 		// console.log(result.rows);
-// 		res.send(result.rows)})
-// 	.catch((err) => console.log(err));
-	
-// });
 
 
 
