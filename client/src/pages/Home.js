@@ -12,7 +12,7 @@ export function Home() {
 	return (
     <main role="main">
       <nav className="navBar">
-        <p>Quest</p>
+        <p className="questTitle">Quest</p>
         <div>
           <Link className="mr-3 navLinks" to="/SignUp">
             Sign Up
@@ -28,12 +28,12 @@ export function Home() {
         <section className="sectionContainer">
           <h3>Hit an error with your code?</h3>
           <p>
-            ..or just need some guidance on getting started. Have no fear help
-            is near!
+            ..or just need some guidance on getting started.
+            <br></br>Have no fear, help is near!
           </p>
           <p>All you need to do is ask</p>
           <Link className="questionLinks" to="/QuestionsForm">
-            <button>Ask Question</button>
+            <button className="btn-center">Ask Question</button>
           </Link>
         </section>
         <section className="sectionContainer">
@@ -47,7 +47,7 @@ export function Home() {
             by sharing your knowledge.
           </p>
           <Link className="openlinks" to="/OpenQuestions">
-            <button>View Open Question</button>
+            <button className="btn-center">View Open Question</button>
           </Link>
         </section>
         <section className="sectionContainer">

@@ -3,37 +3,38 @@ import React from 'react';
 
 
 const OpenQuestions = () => {
-  const [questions, setQuestions] = useState();
+  const [data, setData] = useState([]);
   useEffect(async () => {
     try {
       const res = await fetch('/api/questions');
       const data = await res.json();
-      console.log(data);
-      setQuestions(data);
-      //console.log(data);
+      setData(data);
     } catch (error) {
       console.log(error);
     }
   }, []);
-//   console.log('hello world');
-//   console.log(questions);
+  console.log(data);
+
   return (
-    <h1>testing testing</h1>
-
-
-    //     <div>
-    //         <ul>
-    //             {questions.map((question, index) => {
-    //                 <li index={index}>
-    //                   {question}
-    //                   {/* not returning question? */}
-    //                 </li>;
-    //                 console.log(questions[0]);
-    //                 console.log(data);
-    //             }
-    //          )}
-    //         </ul>
-    //     </div>
+    <section>
+      <div>
+        <h1>testing testing</h1>
+      </div>
+      {data.map((question, index) => {
+              <li index={index}> 
+                {question}
+              </li>
+          })}
+    </section>
   );
 };
 export default OpenQuestions;
+
+
+  {
+    /* <div>
+        <ul>
+          <li key={data[0]}>{data[0]}</li>
+        </ul>
+      </div> */
+  }

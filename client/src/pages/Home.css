@@ -1,14 +1,6 @@
 .logo {
   width: 100px;
 }
-
-.message {
-  color: blue;
-}
-
-.message:hover {
-  background-color: yellow;
-}
 .navBar{
     
     
@@ -18,9 +10,11 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid gray;
+    background-color: #ffe400;
+    border: 5px solid white;
 }
 .navBar p, .navLinks {
-    color: #fb454e;
+    color: #000000;
 }
 .navLinks{
     margin-top: 0.3em;
@@ -29,12 +23,34 @@
     font-weight: 400;
     font-size: 1.4em;
 }
+/* a.questTitle
+{
+  display:block;
+font-family:Trebuchet MS;
+font-size:20px;
+text-align:center;
+color:blue;
+margin:0;
+padding:0;
+width:500px;
+border: thin solid black;
+} */
+.list-group-item, list-group-item-action{
+  background-color: #ebebeb;
+}
+p, h3{
+  text-align: center;
+}
 
 
+body {
+  font-family: sans-serif;
+  background-color: #272727;
+}
 .sectionContainer {
   margin: 2% auto;
   width: 60%;
-  border: 1px solid black;
+  background-color: #14A76C;
   padding: 10px;
 }
 .sectionContainer button {
@@ -43,26 +59,28 @@
 }
 
 section button {
-  background-color: #fb454e;
-  color: white;
+  background-color: #ffe400;
+  color: black;
   border: none;
   cursor: pointer;
+  border: 2px solid white;
 }
-
+.btn-center {
+  text-align: center;  
+  margin-inline: 20rem;
+}
 section:nth-child(2) {
-  background-color: #fb454e;
+  background-color: #ff6525;
   color: white;
 }
 section:nth-child(2) button {
-   color: #fb454e;
-    background-color: white;
+   color: #1e2531;
+    background-color: #14A76C;
   }
 
   ul li{
     cursor: pointer;
   }
-
-
 .loginContainer,
 .signUpContainer {
   width: 30%;
@@ -71,26 +89,29 @@ section:nth-child(2) button {
   padding: 1em;
   border: 1px solid black;
 }
-
 .loginForm,
 .signUpForm {
   display: flex;
   flex-direction: column;
 }
-
 form input, form button {
   height: 2em;
   margin: 0.5em;
   border-radius: 3px;
+  
 }
 
-.questionForm{
+.questionForm,
+.answerForm{
    display: flex;
   flex-direction: column;
   margin-left: 5rem;
   margin-right: 5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  color: white;
+  background-color: #ff6525;
+  border: 3px solid white;
 }
 
 .btn{
@@ -98,8 +119,9 @@ form input, form button {
     display:inline-block;
     text-align: center;
     width: 39%;
-    background-color:rgb(143, 33, 33);
-    color:seashell;
+    background-color:#14A76C;
+    border: 3px solid white;
+    color:black;
     margin-bottom: 2rem;
     margin-left: 5rem;
 }
