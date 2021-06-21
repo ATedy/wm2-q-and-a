@@ -70,6 +70,28 @@ router.delete('/questions/:questionsId', (req, res) => {
   }
 });
 
+// Create new user
+// router.post('/questions', (req, res) => {
+//   const newTitle = req.body.title;
+//   const newBody = req.body.body;
+//   const newTags = req.body.tags;
+//   pool
+//     .query('SELECT * FROM questions WHERE questions.title=$1', [newTitle])
+//     .then((result) => {
+//       if (result.rows.length > 0) {
+//         return res
+//           .status(400)
+//           .send('A question with the same name already exists!');
+//       } else {
+//         const query =
+//           'INSERT INTO questions ( title, body, tags) VALUES ($1, $2, $3)';
+//         pool
+//           .query(query, [ newTitle, newBody, newTags])
+//           .then(() => res.send('Question created!'))
+//           .catch((e) => console.error({message: 'Your question could not be saved'}));
+//       }
+//     });
+// });
 
 
 

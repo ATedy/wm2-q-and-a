@@ -11,17 +11,6 @@ import OpenQuestions from "./pages/OpenQuestions";
 const App = () => {
   return (
     <main>
-      {/* <nav className="navBar">
-        <p>Quest</p>
-        <div>
-          <Link className="mr-3 navLinks" to="/SignUp">
-            Sign Up
-          </Link>
-          <Link className="navLinks" to="/login">
-            Login
-          </Link>
-        </div>
-      </nav> */}
       <Switch>
         <Route path="/" exact>
           <Home />
