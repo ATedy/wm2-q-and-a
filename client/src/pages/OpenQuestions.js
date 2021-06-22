@@ -1,40 +1,61 @@
 import {useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import React from 'react';
+import { Link } from "react-router-dom";
 
 
 const OpenQuestions = () => {
-  const [data, setData] = useState([]);
+      let history = useHistory();
+  const [questions, setQuestions] = useState([]);
   useEffect(async () => {
     try {
       const res = await fetch('/api/questions');
       const data = await res.json();
-      setData(data);
+      setQuestions(data);
     } catch (error) {
       console.log(error);
     }
   }, []);
-  console.log(data);
+  console.log(questions);
 
   return (
     <section>
+    <header className="header">
       <div>
-        <h1>testing testing</h1>
+        <h1 className="openQTitle">Open Questions</h1>
+        <button className="homeBtn" type="submit" onClick={() => history.push('/')}>
+          Home
+        </button>
       </div>
-      {data.map((question, index) => {
-              <li index={index}> 
-                {question}
-              </li>
-          })}
+      </header>
+
+<div className="things">
+      <section className="sectionContainerAnswers">
+      {questions.map((question, index) => {
+        return (
+          <li key={index}>
+          <div className="what">
+              <span className="answerTitle">
+                Question Title: {question.title}{' '}
+              </span>
+              <br></br>
+              <span className="answerBody"> Body: {question.body}</span>
+              <br></br>
+              <Link className="AnswerForm" to="/AnswerForm">
+              <button className="btn" type="submit">
+                Answer!
+              </button>
+               </Link>
+           </div>
+          </li>
+        );
+      })}
+       </section>
+       </div>
+
+       
     </section>
   );
 };
 export default OpenQuestions;
 
-
-  {
-    /* <div>
-        <ul>
-          <li key={data[0]}>{data[0]}</li>
-        </ul>
-      </div> */
-  }

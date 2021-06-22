@@ -1,5 +1,5 @@
 import {useHistory} from 'react-router-dom';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const AnswerForm = () => {
   let history = useHistory();
@@ -26,6 +26,7 @@ const AnswerForm = () => {
   };
 
   return (
+      <section> 
     <div className="answerFormContainer">
       <form className="answerForm">
         <h1>Do you have the answer?</h1>
@@ -53,6 +54,7 @@ const AnswerForm = () => {
         Cancel
       </button>
     </div>
+    </section>
   );
 };
 
