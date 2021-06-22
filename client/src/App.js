@@ -6,13 +6,10 @@ import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import QuestionsForm from "./pages/QuestionsForm";
 import OpenQuestions from "./pages/OpenQuestions";
-import AnswerForm from "./pages/AnswerForm";
+import AnswerForm from './pages/AnswerForm';
 
 
 const App = () => {
-  // particlesJS.load('particles-js', 'assets/particles.json', function () {
-  //   console.log('callback - particles.js config loaded');
-  // });
   return (
     <main>
       <Switch>
@@ -31,8 +28,8 @@ const App = () => {
         <Route path="/OpenQuestions">
           <OpenQuestions />
         </Route>
-         <Route path="/AnswerForm">
-          <OpenQuestions />
+        <Route path="/AnswerForm">
+          <AnswerForm />
         </Route>
       </Switch>
     </main>

@@ -1,8 +1,12 @@
 import {useHistory} from 'react-router-dom';
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 const QuestionsForm = () => {
     let history = useHistory();
+    const [text, setText] = useState('');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
@@ -46,6 +50,16 @@ const QuestionsForm = () => {
           Include all the information someone needs to answer your question.
           Sumarise the problem and what you have tried to resolve it.{' '}
         </h6>
+        {/* <div className="editor">
+          <CKEditor
+          editor={classic}
+          data={text}
+          onChange={(event, editor)=>{
+            const data = editor.getData()
+            setText(data)
+          }}
+          />
+        </div> */}
         <input
           type="text"
           placeholder="My for loop is not iterating properly, please see in the picture what I have written. "
@@ -66,9 +80,11 @@ const QuestionsForm = () => {
           onChange={handleTags}
         />
       </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
-        Ask!
-      </button>
+      <Link to="/pages/OpenQuestions">
+        <button className="btn" type="submit" onClick={handleSubmit}>
+          Ask!
+        </button>
+      </Link>
       <button className="btn" type="submit" onClick={() => history.push('/')}>
         Cancel
       </button>

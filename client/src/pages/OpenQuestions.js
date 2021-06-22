@@ -16,7 +16,6 @@ const OpenQuestions = () => {
       console.log(error);
     }
   }, []);
-  console.log(questions);
 
   return (
     <section>
@@ -41,7 +40,7 @@ const OpenQuestions = () => {
               <br></br>
               <span className="answerBody"> Body: {question.body}</span>
               <br></br>
-              <Link className="AnswerForm" to="/AnswerForm">
+              <Link to="/AnswerForm">
               <button className="btn" type="submit">
                 Answer!
               </button>
