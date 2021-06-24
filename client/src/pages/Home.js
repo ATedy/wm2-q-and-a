@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
+
+import logo from "./logo.svg";
+
 import Feature from './particles';
 
 
@@ -9,6 +12,7 @@ export function Home(props) {
       <div className="wrapper">
           {/* <Feature></Feature> */}
         <main role="main">
+           <img className="logo-image" src="" alt="logo-image" />
           <nav className="navBar">
             <p className="questTitle">Quest</p>
             <div>
@@ -77,6 +81,7 @@ export function Home(props) {
           </div>
         </main>
       </div>
+
   );
 }
 

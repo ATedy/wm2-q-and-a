@@ -227,3 +227,11 @@ margin-left: 5rem;
   z-index:100;
   background-color: #f2ebe9;
 }
+logo-image{
+  color:lightcoral;
+  height: 10px;
+  width:auto;
+}
+header{
+  background-color:lightcyan;
+}
