@@ -1,5 +1,5 @@
 import {useHistory} from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 const AnswerForm = () => {
   let history = useHistory();

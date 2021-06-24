@@ -5,15 +5,15 @@ drop table if exists users;
 
 CREATE TABLE questions (
   id          SERIAL PRIMARY KEY,
-  title       VARCHAR(50) NOT NULL,
-  body        VARCHAR(50) NOT NULL,
+  title       VARCHAR(100) NOT NULL,
+  body        VARCHAR(500) NOT NULL,
   tags        VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE answers (
   id          SERIAL PRIMARY KEY,
-  title       VARCHAR(50) NOT NULL,
-  body        VARCHAR(50) NOT NULL
+  title       VARCHAR(100) NOT NULL,
+  body        VARCHAR(500) NOT NULL
 );
 
 -- CREATE TABLE signup (

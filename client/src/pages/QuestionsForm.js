@@ -1,10 +1,10 @@
 import {useHistory} from 'react-router-dom';
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-const QuestionsForm = () => {
+const QuestionsForm = (props) => {
+  console.log(props.history)
     let history = useHistory();
     const [text, setText] = useState('');
   const [title, setTitle] = useState('');
@@ -31,6 +31,7 @@ const QuestionsForm = () => {
          headers: {"Content-Type": "application/json"},
        });
        console.log(res)
+       history.push('/OpenQuestions');
      }
 
   return (
@@ -80,11 +81,9 @@ const QuestionsForm = () => {
           onChange={handleTags}
         />
       </form>
-      <Link to="/pages/OpenQuestions">
         <button className="btn" type="submit" onClick={handleSubmit}>
           Ask!
         </button>
-      </Link>
       <button className="btn" type="submit" onClick={() => history.push('/')}>
         Cancel
       </button>

@@ -1,13 +1,12 @@
 
-import {Route, Switch, Link} from "react-router-dom";
-
+import {Route, Switch, Link, withRouter} from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import QuestionsForm from "./pages/QuestionsForm";
 import OpenQuestions from "./pages/OpenQuestions";
 import AnswerForm from './pages/AnswerForm';
-
+import Answers from './pages/Answers';
 
 const App = () => {
   return (
@@ -31,10 +30,13 @@ const App = () => {
         <Route path="/AnswerForm">
           <AnswerForm />
         </Route>
+         <Route path="/Answers">
+          <AnswerForm />
+        </Route>
       </Switch>
     </main>
   );
 };
 
 
-export default App;
+export default withRouter(App);
