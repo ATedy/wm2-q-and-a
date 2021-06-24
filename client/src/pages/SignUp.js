@@ -1,6 +1,5 @@
 import {Link, useHistory} from "react-router-dom";
 import React, {useState} from 'react';
-
 const Login = () => { 
   let history = useHistory();
   const [name, setName] = useState('');
@@ -10,17 +9,14 @@ const Login = () => {
     const {value} = event.target;
     setName(value);
   };
-
  const handleEmail = (event) => {
    const {value} = event.target;
    setEmail(value);
  };
-
   const handlePassword = (event) => {
     const {value} = event.target;
     setPassword(value);
   };
-
     const handleSubmit = async (event) => {
       event.preventDefault();
       const newUser = {name, email, password};
@@ -32,7 +28,6 @@ const Login = () => {
       console.log(res);
       history.push('/');
     };
-
   return (
     <div className="signUpContainer">
       <form className="signUpForm">
@@ -57,7 +52,4 @@ const Login = () => {
     </div>
   );
   }
-
 export default Login;
-
-

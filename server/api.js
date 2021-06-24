@@ -1,16 +1,10 @@
-
 import {Router} from 'express';
-
 const router = new Router();
-
 const express = require('express');
 const {pool} = require('./db');
-
-
 router.get('/', (req, res) => {
   res.json({message: 'Your Backend Service is Running'});
 });
-
 //Get all questions
 router.get('/questions', function (req, res) {
   pool
@@ -18,7 +12,6 @@ router.get('/questions', function (req, res) {
     .then((result) => res.json(result.rows))
     .catch((e) => console.error(e));
 });
-
 // Create new questions
 router.post('/questions', (req, res) => {
   const newTitle = req.body.title;
@@ -41,7 +34,6 @@ router.post('/questions', (req, res) => {
       }
     });
 });
-
 // Return a specific question
 router.get('/questions/:id', function (req, res) {
   const id = parseInt(req.params.id);
@@ -54,7 +46,6 @@ router.get('/questions/:id', function (req, res) {
       .catch((e) => console.error(e));
   }
 });
-
 //delete specific questions 
 router.delete('/questions/:questionsId', (req, res) => {
   const id = parseInt(req.params.questionsId);
@@ -69,7 +60,6 @@ router.delete('/questions/:questionsId', (req, res) => {
       );
   }
 });
-
 // Create new user
 router.post('/answers', (req, res) => {
   const newTitle = req.body.title;
@@ -79,17 +69,13 @@ router.post('/answers', (req, res) => {
         .then(() => res.send('Answer created!'))
           .catch((e) => console.error({message: 'Your answer could not be saved'}));
 });
-
 //signup
-
 router.post('/users', (req, res) => {
   console.log(req.body);
   const newName = req.body.name;
   const newEmail = req.body.email;
   const newPassword = req.body.password;
-
   // const {newId, newName, newEmail, newPassword} = req.body;
-
   pool
     .query('SELECT * FROM users WHERE users.email=$1', [newEmail])
     .then((result) => {
@@ -105,7 +91,4 @@ router.post('/users', (req, res) => {
       }
     });
 });
-
-
-
 export default router;
