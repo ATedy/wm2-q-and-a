@@ -31,6 +31,7 @@ const [name, setName] = useState("");
     setName("");
     setEmail("");
     setPassword("");
+    history.push("/OpenQuestions")
     
   };
 
@@ -49,9 +50,7 @@ const [name, setName] = useState("");
       <input type="text" placeholder="Email"   onChange={(e) => setEmail(e.target.value)} />
       <input type="Password" placeholder="password"  onChange={(e) => setPassword(e.target.value)} />
       {/* <input type="submit" value="Sign Up"/> */}
-      <button type="submit"  onClick={(e) =>{
-        e.preventDefault();
-        history.push("/OpenQuestions")}}>Sign Up</button>
+      <button type="submit">Sign Up</button>
     </form>
     <p>
       Already have an account? <Link to="/login">Login</Link>
