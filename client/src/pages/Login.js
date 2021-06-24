@@ -25,4 +25,3 @@ const Login = () => {
 
 export default Login;
 
- {/* <input type="submit" value="Log in" onClick={alert("hhhhhhhh")}/> */}

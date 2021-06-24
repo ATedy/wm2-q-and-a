@@ -1,29 +1,54 @@
 import { Pool } from "pg";
 require("dotenv").config();
 let config;
-//heroku
-if (process.env.DATABASE_URL) {
-	config = {
-		connectionString: process.env.DATABASE_URL,
-		connectionTimeoutMillis: 5000,
-		ssl: {
-			rejectUnauthorized: false,
-		},
-	};
-	
-}
 
- else  {// local
+const dbUrl = process.env.DATABASE_URL || 'postgres://localhost:5432/qadata';
+
+
+// export const pool = new Pool({
+//   connectionString: dbUrl,
+//   connectionTimeoutMillis: 5000,
+// });
+
+
+
+//Amanuel code
+//heroku
+// if (process.env.DATABASE_URL) {
+// 	config = {
+// 		connectionString: process.env.DATABASE_URL,
+// 		connectionTimeoutMillis: 5000,
+// 		ssl: {
+// 			rejectUnauthorized: false,
+// 		},
+// 	};
+	
+// }
+
+//  else  {// local
  
+
+// 	config = {
+// 		user: process.env.DB_USER,
+// 		host: process.env.DB_HOST,
+// 		database: "q_a",
+// 		password: process.env.DB_PASS,
+// 		port: 5432,
+// 	};
+// }
+// const pool = new Pool(config);
+
 	config = {
 		user: process.env.DB_USER,
 		host: process.env.DB_HOST,
-		database: "q_a",
+		database: "qadata",
 		password: process.env.DB_PASS,
 		port: 5432,
 	};
 }
 const pool = new Pool(config);
+
+
 export const connectDb = async () => {
     let client;
 	try {
@@ -37,12 +62,6 @@ export const connectDb = async () => {
 };
 export const disconnectDb = () => pool.close();
 export default { query: pool.query.bind(pool) };
-
-
-
-
-
-
 
 
 
