@@ -4,10 +4,13 @@ let config;
 
 const dbUrl = process.env.DATABASE_URL || 'postgres://localhost:5432/qadata';
 
-export const pool = new Pool({
-  connectionString: dbUrl,
-  connectionTimeoutMillis: 5000,
-});
+
+// export const pool = new Pool({
+//   connectionString: dbUrl,
+//   connectionTimeoutMillis: 5000,
+// });
+
+
 
 //Amanuel code
 //heroku
@@ -24,6 +27,7 @@ export const pool = new Pool({
 
 //  else  {// local
  
+
 // 	config = {
 // 		user: process.env.DB_USER,
 // 		host: process.env.DB_HOST,
@@ -33,6 +37,17 @@ export const pool = new Pool({
 // 	};
 // }
 // const pool = new Pool(config);
+
+	config = {
+		user: process.env.DB_USER,
+		host: process.env.DB_HOST,
+		database: "qadata",
+		password: process.env.DB_PASS,
+		port: 5432,
+	};
+}
+const pool = new Pool(config);
+
 
 export const connectDb = async () => {
     let client;
