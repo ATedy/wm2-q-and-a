@@ -1,6 +1,6 @@
 import {Link, useHistory} from "react-router-dom";
 import React, {useState} from 'react';
-const Login = () => { 
+const SignUp = () => { 
   let history = useHistory();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -52,4 +52,4 @@ const Login = () => {
     </div>
   );
   }
-export default Login;
+export default SignUp;

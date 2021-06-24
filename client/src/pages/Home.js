@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-
 import logo from "./logo.svg";
-
 import Feature from './particles';
 import NavBar from './NavBar';
-
 
 export function Home(props) {
  

@@ -1,6 +1,6 @@
 import {Router} from 'express';
 const router = new Router();
-const express = require('express');
+// const express = require('express');
 const {pool} = require('./db');
 router.get('/', (req, res) => {
   res.json({message: 'Your Backend Service is Running'});
@@ -69,13 +69,15 @@ router.post('/answers', (req, res) => {
         .then(() => res.send('Answer created!'))
           .catch((e) => console.error({message: 'Your answer could not be saved'}));
 });
+
+
 //signup
 router.post('/users', (req, res) => {
   console.log(req.body);
   const newName = req.body.name;
   const newEmail = req.body.email;
   const newPassword = req.body.password;
-  // const {newId, newName, newEmail, newPassword} = req.body;
+  // const { newName, newEmail, newPassword} = req.body;
   pool
     .query('SELECT * FROM users WHERE users.email=$1', [newEmail])
     .then((result) => {

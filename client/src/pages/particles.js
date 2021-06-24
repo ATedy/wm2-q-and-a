@@ -11,13 +11,13 @@ class Feature extends Component {
   }
 
   particlesInit(main) {
-    console.log(main);
+    // console.log(main);
 
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
   }
 
   particlesLoaded(container) {
-    console.log(container);
+    // console.log(container);
   }
 
   render() {
