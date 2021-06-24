@@ -13,7 +13,7 @@ const Login = () => {
       <input type="text" placeholder="Email"  />
       <input type="password" placeholder="password"  />
      
-      <button type="submit" onClick={() =>history.push("/")}>Log in</button>
+      <button type="submit" onClick={() =>history.push("/OpenQuestions")}>Log in</button>
     </form>
     <p>Forgot your password?</p>
     <p>

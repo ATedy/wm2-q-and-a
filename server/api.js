@@ -1,7 +1,10 @@
 import {Router} from 'express';
+import pool from "./db"
 const router = new Router();
 // const express = require('express');
-const {pool} = require('./db');
+// const {poo/l} = require('./db');
+
+
 router.get('/', (req, res) => {
   res.json({message: 'Your Backend Service is Running'});
 });
@@ -78,12 +81,16 @@ router.post('/users', (req, res) => {
   const newEmail = req.body.email;
   const newPassword = req.body.password;
   // const { newName, newEmail, newPassword} = req.body;
+  console.log(pool);
   pool
     .query('SELECT * FROM users WHERE users.email=$1', [newEmail])
     .then((result) => {
       if (result.rows.length > 0) {
         return res.status(400).send('A user with this email already exists!');
-      } else {
+       
+      } 
+      
+      else {
         const query =
           'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)';
         pool
