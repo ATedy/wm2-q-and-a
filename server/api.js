@@ -80,7 +80,31 @@ router.post('/answers', (req, res) => {
           .catch((e) => console.error({message: 'Your answer could not be saved'}));
 });
 
+//signup
 
+router.post('/users', (req, res) => {
+  console.log(req.body);
+  const newName = req.body.name;
+  const newEmail = req.body.email;
+  const newPassword = req.body.password;
+
+  // const {newId, newName, newEmail, newPassword} = req.body;
+
+  pool
+    .query('SELECT * FROM users WHERE users.email=$1', [newEmail])
+    .then((result) => {
+      if (result.rows.length > 0) {
+        return res.status(400).send('A user with this email already exists!');
+      } else {
+        const query =
+          'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)';
+        pool
+          .query(query, [newName, newEmail, newPassword])
+          .then(() => res.send('user created!'))
+          .catch((err) => console.error(err));
+      }
+    });
+});
 
 
 
