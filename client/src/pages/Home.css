@@ -40,6 +40,7 @@ width: 100%;
     font-weight: 800;
     font-size: 5em;
 }
+
 .questTitle
 {
   display:block;
@@ -211,14 +212,7 @@ form input, form button {
 width:80%;
 margin-left: 5rem; 
 }
-.header{
-  background-color: #FFEEDB;
-  color: black;
-  padding: 4px;
-  flex-direction: column; 
-   position: relative;
-  z-index:100;
-}
+
 .openQTitle{
   text-align: center;
   font:  bold 16px/2 fantasy;
@@ -235,3 +229,52 @@ logo-image{
 header{
   background-color:lightcyan;
 }
+
+/* footer sec */
+
+.footer-section{
+  flex-direction: column-reverse;
+  background-color: lightgrey;
+  padding: 1.5%;
+  border-radius: 2px;
+}
+.list-footer{
+  position: relative;
+  justify-content: space-between;
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  color:red;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+.list li{
+  list-style-type: none;
+}
+.ui icon-input{
+  flex-direction: column;
+  padding-left: 100px;
+  border-radius: 10px;
+}
+
+.navBar{
+  margin: 2% auto;
+  width: 60%;
+  padding: 0.1%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.navBar p, .navLinks {
+  color: #FB454E;
+}
+.navLinks{
+  margin-top: 0.3em;
+}
+.navBar p{
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+

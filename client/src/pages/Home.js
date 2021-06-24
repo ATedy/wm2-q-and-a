@@ -4,28 +4,17 @@ import "./Home.css";
 import logo from "./logo.svg";
 
 import Feature from './particles';
+import NavBar from './NavBar';
 
 
 export function Home(props) {
  
 	return (
       <div className="wrapper">
-          {/* <Feature></Feature> */}
+      
+       <NavBar />
         <main role="main">
-           <img className="logo-image" src="" alt="logo-image" />
-          <nav className="navBar">
-            <p className="questTitle">Quest</p>
-            <div>
-              <Link className="mr-3 navLinks" to="/SignUp">
-                Sign Up
-              </Link>
-              <Link className="navLinks" to="/login">
-                Login
-              </Link>
-            </div>
-          </nav>
-          <div></div>
-          <div>
+         <div>
             <section className="sectionContainer">
               <h3>Hit an error with your code?</h3>
               <p>
@@ -80,6 +69,19 @@ export function Home(props) {
             </section>
           </div>
         </main>
+
+
+        <section className="footer-section">
+          <footer className="list-footer">
+            <ul className="list">
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+              <li>website</li>
+              <li>Copyright</li>
+            </ul>
+          </footer>
+        </section>
       </div>
 
   );
