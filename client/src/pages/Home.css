@@ -10,8 +10,8 @@
   background-color: yellow;
 }
 .navBar{
-    
-    
+
+
     margin: 2% auto;
     width: 60%;
     padding: 0.1%;
@@ -77,4 +77,12 @@ form input, form button {
   height: 2em;
   margin: 0.5em;
   border-radius: 3px;
+}
+logo-image{
+  color:lightcoral;
+  height: 10px;
+  width:auto;
+}
+header{
+  background-color:lightcyan;
 }
