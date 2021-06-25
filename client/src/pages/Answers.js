@@ -16,15 +16,16 @@ const OpenQuestions = () => {
       console.log(error);
     }
   }, []);
-    useEffect(async () => {
-    try {
-      const res = await fetch('/api/answers');
-      const data = await res.json();
-      setQuestions(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+
+  //   useEffect(async () => {
+  //   try {
+  //     const res = await fetch('/api/answers');
+  //     const data = await res.json();
+  //     setQuestions(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   return (
     <section>
