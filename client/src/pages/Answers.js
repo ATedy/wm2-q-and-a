@@ -5,17 +5,18 @@ import { Link } from "react-router-dom";
 
 
 const OpenQuestions = () => {
-      let history = useHistory();
   const [questions, setQuestions] = useState([]);
-  useEffect(async () => {
-    try {
-      const res = await fetch('/api/questions');
-      const data = await res.json();
-      setQuestions(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+      let history = useHistory();
+  
+  // useEffect(async () => {
+  //   try {
+  //     const res = await fetch('/api/questions');
+  //     const data = await res.json();
+  //     setQuestions(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   //   useEffect(async () => {
   //   try {

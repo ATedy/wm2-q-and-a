@@ -31,7 +31,7 @@ const App = () => {
           <AnswerForm />
         </Route>
          <Route path="/Answers">
-          <Answers />
+          <AnswerForm />
         </Route>
       </Switch>
     </>
