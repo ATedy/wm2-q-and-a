@@ -10,7 +10,7 @@ import Answers from './pages/Answers';
 
 const App = () => {
   return (
-    <main>
+    <>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -34,7 +34,7 @@ const App = () => {
           <AnswerForm />
         </Route>
       </Switch>
-    </main>
+    </>
   );
 };
 

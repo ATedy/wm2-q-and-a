@@ -7,10 +7,10 @@ import {Link} from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className="navBar">
-      <p>Q U E S T</p>
+      <p className="logoName">Q U E S T</p>
       <div>
         <input type="text" placeholder="Search.." className="prompt" />
-        <button type="submit">Submit</button>
+        <button type="submit" >Search</button>
         <i className="search icon"></i>
       </div>
       <div>
