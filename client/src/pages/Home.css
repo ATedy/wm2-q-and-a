@@ -254,7 +254,8 @@ header{
 
 .footer-section{
   flex-direction: column-reverse;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+  background-color: #264143;
   padding: 1.5%;
   border-radius: 2px;
 }
@@ -265,7 +266,7 @@ header{
 .list{
   display: flex;
   flex-direction: row;
-  color:red;
+  color: white;
   justify-content: space-evenly;
   align-content: flex-start;
 }
