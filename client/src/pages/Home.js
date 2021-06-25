@@ -9,8 +9,9 @@ export function Home(props) {
 	return (
       <div className="wrapper">
       
-       <NavBar />
+      
         <main role="main">
+        <NavBar />
          <div>
             <section className="sectionContainer">
               <h3>Hit an error with your code?</h3>
