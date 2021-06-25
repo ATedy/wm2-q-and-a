@@ -4,12 +4,13 @@ import React, {useState} from 'react';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 const QuestionsForm = (props) => {
-  console.log(props.history)
-    let history = useHistory();
-    const [text, setText] = useState('');
+  const [text, setText] = useState('');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
+  console.log(props.history)
+  let history = useHistory();
+
   const handleTitle = (event) =>{
     const {value}=event.target;
     setTitle(value);
