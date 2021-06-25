@@ -20,6 +20,7 @@ const Login = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     console.log(e);
     if(!name || !email || !password){
       alert('Please enter fill all the required fields')
@@ -70,8 +71,11 @@ const Login = (props) => {
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
+
     </div>
   );
 };
+
+
 
 export default Login;
