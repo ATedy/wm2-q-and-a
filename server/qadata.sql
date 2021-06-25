@@ -1,27 +1,20 @@
 drop table if exists questions;
 drop table if exists answers;
-drop table if exists signup;
 drop table if exists users;
 
 CREATE TABLE questions (
   id          SERIAL PRIMARY KEY,
-  title       VARCHAR(100) NOT NULL,
+  title       VARCHAR(200) NOT NULL,
   body        VARCHAR(500) NOT NULL,
   tags        VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE answers (
   id          SERIAL PRIMARY KEY,
-  title       VARCHAR(100) NOT NULL,
+  title       VARCHAR(200) NOT NULL,
   body        VARCHAR(500) NOT NULL
 );
 
--- CREATE TABLE signup (
---   id          SERIAL PRIMARY KEY,
---   first_name       VARCHAR(50) NOT NULL,
---   second_name        VARCHAR(50) NOT NULL,
---   email           VARCHAR(50) NOT NULL
--- );
 
 CREATE TABLE users (
   id                SERIAL PRIMARY KEY NOT NULL,
@@ -33,9 +26,16 @@ CREATE TABLE users (
 );
 
 
-INSERT INTO questions (id, title, body) VALUES ('1','Why is my code not working? ', 'Please see the photo');
+INSERT INTO questions (title, body, tags) VALUES ('Why is my code not working? ', 'problem Description', 'React');
+INSERT INTO questions (title, body, tags) VALUES ('Why is my code not working? ', 'problem Description', 'JS');
+INSERT INTO questions (title, body, tags) VALUES ('Why is my code not working? ', 'problem Description', 'Node');
+INSERT INTO questions (title, body, tags) VALUES ('Why is my code not working? ', 'problem Description', 'HTML');
 
-INSERT INTO answers (id, title, body) VALUES ('1','Hi ', 'Your code');
+INSERT INTO answers (title, body) VALUES ('Hi ', 'The problem is');
+INSERT INTO answers (title, body) VALUES ('Hi ', 'The problem is');
+INSERT INTO answers (title, body) VALUES ('Hi ', 'The problem is');
 
-INSERT INTO users (id, name, email, password) VALUES ('1','Monique ',  'moniqueking57@gmail.com', 'hhhh');
-INSERT INTO users (id, name, email, password) VALUES ('2','Amanuel ',  'amanueltedros@gmail.com', 'hhhh');
+INSERT INTO users (name, email, password) VALUES ('Monique ',  'moniqueking57@gmail.com', '123');
+INSERT INTO users (name, email, password) VALUES ('Amanuel ',  'amanueltedros@gmail.com', '1234');
+INSERT INTO users (name, email, password) VALUES ('Mame',  'mame@gmail.com', '12345');
+INSERT INTO users (name, email, password) VALUES ('test ',  'test@gmail.com', '123456');

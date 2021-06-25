@@ -16,7 +16,6 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(e);
     if(!email || !password){
       alert('Please enter your email and password')
     }
