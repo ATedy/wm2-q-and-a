@@ -57,6 +57,8 @@ color: #264143
 }
 p, h1, h3, h6{
   text-align: center;
+  position: relative;
+  z-index:100;
 }
 body {
   font-family: sans-serif;
@@ -106,6 +108,7 @@ section button {
 section:nth-child(1){
   background-color: #e99f4c;
   color: #f2ebe9;
+  margin: 20px;
 }
 section:nth-child(1) button {
    color: #f2ebe9;
@@ -185,8 +188,8 @@ form input, form button {
      position: relative;
   z-index:100;
 }
-.things{
-  margin: 2% auto;
+/* .things{
+  margin: 20px auto;
   width: 100%;
   padding: 30px;
   list-style-type:none;
@@ -195,20 +198,47 @@ form input, form button {
   /* text-align:center; */
    /* flex-basis: auto; */
   /* flex-wrap: nowrap; */
-   position: relative;
+   /* position: relative;
   z-index:100;
 }
 .what{
   background-color: #f2ebe9;
-  color: black;
+  color: black; */
  /* justify-content: space-between; */
- padding: 30px;
+ /* padding: 30px; */
  /* border-bottom: 50px; */
  /* flex-direction: column; */
- border: 3px solid black;
- margin: 30px;
+ /* border: 3px solid black;
+ margin: 10px auto; */
   /* position: relative; */
+  /* z-index:100;
+width:80%; */
+/* margin-left: 5rem;  */
+/* } */ 
+
+.things{
+  margin: 2% auto;
+  width: 100%;
+  padding: 1em;
+  /* list-style-type:none; */
+  position: flex;
+  justify-content: space-evenly;
+   position: relative;
   z-index:100;
+}
+.thanksTitle{
+    z-index:100;
+    color:black;
+    background-color: #f2ebe9;
+}
+.what{
+  background-color: #f2ebe9;
+  color: black;
+ text-align: center;
+ padding: 0.5em;
+border: 3px solid black;
+ margin: 10px auto;
+ z-index:100;
 width:80%;
 margin-left: 5rem; 
 }
@@ -220,6 +250,7 @@ margin-left: 5rem;
     position: relative;
   z-index:100;
   background-color: #f2ebe9;
+  color:black;
 }
 logo-image{
   color:lightcoral;

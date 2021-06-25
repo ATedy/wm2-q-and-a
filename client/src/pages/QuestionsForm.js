@@ -31,7 +31,7 @@ const QuestionsForm = (props) => {
          headers: {"Content-Type": "application/json"},
        });
        console.log(res)
-       history.push('/OpenQuestions');
+       history.push('/Thanks');
      }
 
   return (

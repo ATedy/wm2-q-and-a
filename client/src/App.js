@@ -7,6 +7,7 @@ import QuestionsForm from "./pages/QuestionsForm";
 import OpenQuestions from "./pages/OpenQuestions";
 import AnswerForm from './pages/AnswerForm';
 import Answers from './pages/Answers';
+import Thanks from './pages/Thanks';
 
 const App = () => {
   return (
@@ -30,8 +31,11 @@ const App = () => {
         <Route path="/AnswerForm">
           <AnswerForm />
         </Route>
-         <Route path="/Answers">
+        <Route path="/Answers">
           <AnswerForm />
+        </Route>
+        <Route path="/Thanks">
+          <Thanks />
         </Route>
       </Switch>
     </main>

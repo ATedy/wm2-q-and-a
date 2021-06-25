@@ -32,6 +32,7 @@ class Feature extends Component {
               value: "#CCDCDD",
             },
             // #EDDDD1
+
           },
           fpsLimit: 60,
           interactivity: {
