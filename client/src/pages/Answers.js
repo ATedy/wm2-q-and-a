@@ -28,9 +28,10 @@ const OpenQuestions = () => {
 
   return (
     <section>
+      
     <header className="header">
       <div>
-        <h1 className="openQTitle">All Questions</h1>
+        <h1 className="openQTitle">Questions</h1>
         <button className="homeBtn" type="submit" onClick={() => history.push('/')}>
           Home
         </button>
