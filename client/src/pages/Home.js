@@ -3,6 +3,7 @@ import "./Home.css";
 import logo from "./logo.svg";
 import Feature from "./particles";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 export function Home(props) {
   return (
@@ -60,18 +61,20 @@ export function Home(props) {
           </ul>
         </section>
       </main>
-
-      <section className="footer-section">
+      <Footer />
+      {/* <section className="footer-section">
         <footer className="list-footer">
           <ul className="list">
-            <li>Facebook</li>
+            <li>Facebook
+              
+            </li>
             <li>Instagram</li>
             <li>Twitter</li>
             <li>website</li>
             <li>Copyright</li>
           </ul>
         </footer>
-      </section>
+      </section> */}
     </div>
   );
 }
