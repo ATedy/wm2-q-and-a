@@ -5,28 +5,34 @@ const Login = () => {
   let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const login = async (user) => {
     const searchedUser = await fetch("/api/login", {
       method: "POST",
       headers: {"content-type": "application/json"},
       body: JSON.stringify(user),
-    }).then((response) => console.log(response));
+    }).then((response) => {
+      console.log(response.ok);
+      if(!response.ok){
+        alert("wrong password/email");
+        history.push("/Login");
+        setEmail("");
+      setPassword("");
+      }
+      console.log(response);
+      setEmail("");
+      setPassword("");
+
+      history.push("/OpenQuestions");
+    })
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(!email || !password){
-      alert('Please enter your email and password')
-    }
-    else{
-      login({email, password});
-      console.log(`${email}, ${password}`);
-  
-      setEmail("");
-      setPassword("");
-      history.push("/OpenQuestions");
-    }
+    console.log(`${email}, ${password}`);
+    login({email, password});
+   
    
   };
 

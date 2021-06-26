@@ -51,16 +51,19 @@ const Login = (props) => {
           Join the community to Ask and Answer questions from fellow developers
         </p>
         <input
+         required
           type="text"
           placeholder="Username"
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          type="text"
+        required
+          type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+        required
           type="Password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}

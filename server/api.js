@@ -77,6 +77,13 @@ router.post("/answers", (req, res) => {
     .catch((e) => console.error({message: "Your answer could not be saved"}));
 });
 
+router.get("/answers", function (req, res) {
+  pool
+    .query("SELECT * FROM from answers")
+    .then((result) => res.json(result.rows))
+    .catch((e) => console.error(e));
+});
+
 //signup
 router.post("/signUp", (req, res) => {
   console.log(req.body);
@@ -118,12 +125,12 @@ router.post("/login", (req, res) => {
         console.log("found");
         return res.send(result);
       } else {
-        res.send({message: " Wrong email/password!"});
+        res.status(401).send({message: " Wrong email/password!"});
       }
     })
     .catch((err) => {
       console.error(err);
-      return res.send({error: err});
+      return res.status(500).send({error: err});
     });
 });
 export default router;
