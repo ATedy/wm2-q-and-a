@@ -23,6 +23,7 @@ const AnswerForm = () => {
       headers: {'Content-Type': 'application/json'},
     });
     console.log(res);
+    console.log(newAnswer)
   };
 
   return (
@@ -47,7 +48,7 @@ const AnswerForm = () => {
           onChange={handleBody}
         />
       </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
+      <button className="btn" type="submit" onClick={() => history.push('/Thanks')}>
         Answer!
       </button>
       <button className="btn" type="submit" onClick={() => history.push('/')}>

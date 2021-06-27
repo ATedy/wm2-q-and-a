@@ -4,7 +4,6 @@ import React, {useState} from 'react';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 const QuestionsForm = (props) => {
-  console.log(props.history)
     let history = useHistory();
     const [text, setText] = useState('');
   const [title, setTitle] = useState('');
@@ -25,12 +24,13 @@ const QuestionsForm = (props) => {
      const handleSubmit = async(event) => {
        event.preventDefault();
        const newQuestion = {title, body, tags};
+         console.log(newQuestion)
        const res = await fetch('/api/questions', {
          method: "POST", 
          body: JSON.stringify(newQuestion),
          headers: {"Content-Type": "application/json"},
        });
-       console.log(res)
+       console.log(newQuestion)
        history.push('/Thanks');
      }
 
@@ -51,16 +51,16 @@ const QuestionsForm = (props) => {
           Include all the information someone needs to answer your question.
           Sumarise the problem and what you have tried to resolve it.{' '}
         </h6>
-        {/* <div className="editor">
-          <CKEditor
+        {/* <div className="editor"> */}
+          {/* <CKEditor
           editor={classic}
           data={text}
           onChange={(event, editor)=>{
             const data = editor.getData()
             setText(data)
           }}
-          />
-        </div> */}
+          /> */}
+        {/* </div> */}
         <input
           type="text"
           placeholder="My for loop is not iterating properly, please see in the picture what I have written. "

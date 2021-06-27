@@ -7,24 +7,19 @@ import { Link } from "react-router-dom";
 const OpenQuestions = () => {
       let history = useHistory();
   const [questions, setQuestions] = useState([]);
+   const [answers, setAnswers] = useState([]);
   useEffect(async () => {
     try {
-      const res = await fetch('/api/questions');
-      const data = await res.json();
-      setQuestions(data);
+      const questions = await fetch('/api/questions');
+      const answers = await fetch('/api/answers');
+       console.log( answers)
+      setQuestions(await questions.json());
+      setAnswers(await answers.json());
     } catch (error) {
       console.log(error);
     }
   }, []);
-    useEffect(async () => {
-    try {
-      const res = await fetch('/api/answers');
-      const data = await res.json();
-      setQuestions(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+ 
 
   return (
     <section>
@@ -42,19 +37,30 @@ const OpenQuestions = () => {
       {questions.map((question, index) => {
         return (
           <li key={index}>
-          <div className="what">
+            <div className="what">
               <span className="answerTitle">
-                Question Title: {question.title}{' '}
+                Question: {question.title}{' '}
               </span>
               <br></br>
-              <span className="answerBody"> Body: {question.body}</span>
+              <span className="answerBody"> {question.body}</span>
               <br></br>
+              <br></br>
+                        <div>
+                           {answers.map((answer, i) => {
+                            return (
+                              <div key={i}>
+                              <span className="answerBody"> Answer: {answer.title}</span>
+                              <br></br>
+                              <span className="answerBody"> {answer.body}</span>
+                              </div>
+                            )})}   
+                       </div>
               <Link to="/AnswerForm">
-              <button className="btn" type="submit">
-                Answer!
-              </button>
-               </Link>
-           </div>
+                <button className="btn" type="submit">
+                  Answer!
+                </button>
+              </Link>
+            </div>
           </li>
         );
       })}

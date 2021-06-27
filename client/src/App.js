@@ -32,7 +32,7 @@ const App = () => {
           <AnswerForm />
         </Route>
         <Route path="/Answers">
-          <AnswerForm />
+          <Answers />
         </Route>
         <Route path="/Thanks">
           <Thanks />
