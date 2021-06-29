@@ -65,16 +65,16 @@ router.delete('/questions/:questionsId', (req, res) => {
   }
 });
 // Create new answer
-router.post('/answers', (req, res) => {
-  const newTitle = req.body.title;
-  const newBody = req.body.body;
-  console.log(newTitle)
-  console.log(newBody)
-  pool
-    .query('INSERT INTO answers (answer_title , answer_body) VALUES ($1, $2)', [newTitle, newBody])
-        .then(() => res.send('Answer created!'))
-          .catch((e) => console.error({message: 'Your answer could not be saved'}));
-});
+// router.post('/answers', (req, res) => {
+//   const newTitle = req.body.title;
+//   const newBody = req.body.body;
+//   console.log(newTitle)
+//   console.log(newBody)
+//   pool
+//     .query('INSERT INTO answers (answer_title , answer_body) VALUES ($1, $2)', [newTitle, newBody])
+//         .then(() => res.send('Answer created!'))
+//           .catch((e) => console.error({message: 'Your answer could not be saved'}));
+// });
 
 
 //signup
@@ -115,26 +115,29 @@ router.get('/answers', function (req, res) {
 });
 
 //create a new answer
-// router.post('/answers', (req, res) => {
-//   console.log(req.body)
-//   const newTitle = req.body.title;
-//   const newBody = req.body.body;
-//   pool
-//     .query('SELECT * FROM answers WHERE answers.answer_title=$1', [newTitle])
-//     .then((result) => {
-//       if (result.rows.length > 0) {
-//         return res
-//           .status(400)
-//           .send('An answer with the same name already exists!');
-//       } else {
-//         const query =
-//           'INSERT INTO answers (answer_title , answer_body) VALUES ($1, $2)';
-//         pool
-//           .query(query, [ newTitle, newBody])
-//           .then(() => res.status(200).json({newTitle, newBody}))
-//           .catch((e) => console.error({message: e}));
-//       }
-//     });
-// });
+router.post('/answers', (req, res) => {
+  console.log(req.body)
+  const questionId = req.body.questionId
+  const newTitle = req.body.title;
+  const newBody = req.body.body;
+  pool
+    .query('SELECT * FROM answers WHERE answers.answer_title=$1', [newTitle])
+    .then((result) => {
+      if (result.rows.length > 0) {
+        return res
+          .status(400)
+          .send('An answer with the same name already exists!');
+      } else {
+        const query =
+          'INSERT INTO answers (questions_id, answer_title , answer_body) VALUES ($1, $2, $3)';
+        pool
+          .query(query, [questionId, newTitle, newBody])
+          .then(() =>
+            res.status(200).json({questionId, newTitle, newBody})
+          )
+          .catch((e) => console.error({message: e}));
+      }
+    });
+});
 
 export default router;

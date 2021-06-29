@@ -47,13 +47,20 @@ const OpenQuestions = () => {
               <br></br>
                         <div>
                            {answers.map((answer, i) => {
+                             console.log(answer)
                             return (
                               <div key={i}>
-                              <span className="answerBody"> Answer: {answer.title}</span>
-                              <br></br>
-                              <span className="answerBody"> {answer.body}</span>
+                                <span className="answerBody">
+                                  {' '}
+                                  Answer: {answer.answer_title}
+                                </span>
+                                <br></br>
+                                <span className="answerBody">
+                                  {' '}
+                                  {answer.answer_body}
+                                </span>
                               </div>
-                            )})}   
+                            );})}   
                        </div>
               <Link to="/AnswerForm">
                 <button className="btn" type="submit">
