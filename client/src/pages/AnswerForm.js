@@ -18,11 +18,12 @@ const AnswerForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newAnswer = {questionId, answer_title, answer_body};
+    const newAnswer = {questionId, title, body};
     const res = await fetch('/api/answers', {
       method: 'POST',
       body: JSON.stringify(newAnswer),
       headers: {'Content-Type': 'application/json'},
+  
     });
     // console.log(res);
     console.log(newAnswer)

@@ -140,4 +140,17 @@ router.post('/answers', (req, res) => {
     });
 });
 
+
+// Return a specific answer
+router.get('/answers/:id', function (req, res) {
+  const id = parseInt(req.params.id);
+  if (isNaN(id)) {
+    res.status(400).send({message: 'Error'});
+  } else {
+    pool
+      .query('SELECT * FROM answers WHERE questions_id=$1', [id])
+      .then((result) => res.json(result.rows))
+      .catch((e) => console.error(e));
+  }
+});
 export default router;
