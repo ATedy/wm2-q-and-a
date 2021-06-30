@@ -20,19 +20,27 @@ const Login = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    console.log(e);
     if(!name || !email || !password){
       alert('Please enter fill all the required fields')
-    }else{
-      onAddUser({name, email, password});
-      console.log(`${name}, ${email}, ${password}`);
-  
-      setName("");
-      setEmail("");
-      setPassword("");
-      
-      history.push("/OpenQuestions");
+      history.push("/signUp");
+    } else {
+      if (name.length < 3) {
+        history.push("/signUp");
+        alert('Please username is too short');
+
+        setEmail("");
+      } else if (password.length < 6) {
+        alert('Please password is too short');
+        setEmail("");
+        history.push("/signUp");
+      } else {
+        onAddUser({name, email, password});
+        console.log(`${name}, ${email}, ${password}`);
+        history.push("/OpenQuestions");
+        setName("");
+        setEmail("");
+        setPassword("");
+      }
     }
     
    
