@@ -28,9 +28,6 @@ const Login = () => {
     })
   };
 
-
-  
-
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(`${email}, ${password}`);

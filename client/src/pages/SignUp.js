@@ -22,28 +22,20 @@ const Login = (props) => {
     e.preventDefault();
 
     console.log(e);
-    if (!name || !email || !password) {
+    if(!name || !email || !password){
       alert('Please enter fill all the required fields')
-      history.push("/signUp");
-    } else {
-      if (name.length < 3) {
-        history.push("/signUp");
-        alert('Please username is too short');
-
-        setEmail("");
-      } else if (password.length < 6) {
-        alert('Please password is too short');
-        setEmail("");
-        history.push("/signUp");
-      } else {
-        onAddUser({name, email, password});
-        console.log(`${name}, ${email}, ${password}`);
-        history.push("/OpenQuestions");
-        setName("");
-        setEmail("");
-        setPassword("");
-      }
+    }else{
+      onAddUser({name, email, password});
+      console.log(`${name}, ${email}, ${password}`);
+  
+      setName("");
+      setEmail("");
+      setPassword("");
+      
+      history.push("/OpenQuestions");
     }
+    
+   
   };
 
   return (
@@ -59,19 +51,19 @@ const Login = (props) => {
           Join the community to Ask and Answer questions from fellow developers
         </p>
         <input
-          required
+         required
           type="text"
           placeholder="Username"
           onChange={(e) => setName(e.target.value)}
         />
         <input
-          required
+        required
           type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          required
+        required
           type="Password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -82,8 +74,11 @@ const Login = (props) => {
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
+
     </div>
   );
 };
+
+
 
 export default Login;
