@@ -2,9 +2,7 @@ import {Router} from "express";
 import pool from "./db";
 const router = new Router();
 // new packages
-
-const passport = require('passport');
-const passportLocal = require('passport-local').Strategy;
+const initializePassport = require('./passport-config');
 const bcrypt = require('bcrypt');
 
 router.get("/", (req, res) => {
@@ -37,22 +35,25 @@ router.post("/signUp", async(req, res) => {
     });
 });
 
-router.post("/login", (req, res) => {
+router.post("/login", async(req, res) => {
   console.log(req.body);
   const newEmail = req.body.email;
   const newPassword = req.body.password;
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+  console.log(hashedPassword);
   // const { newName, newEmail, newPassword} = req.body;
-  console.log(pool);
-  pool
-    .query("SELECT * FROM users WHERE users.email = $1 AND users.password = $2", [
+pool
+    .query("SELECT * FROM users WHERE users.email", [
       newEmail,
-      newPassword,
     ])
-    .then((result) => {
+    .then(async(result) => {
       if (result.rows.length > 0) {
-        console.log(result.rows);
-        console.log("found");
-        return res.send(result);
+        if(await bcrypt.compare(newPassword, result.rows[0].password)){
+          console.log(result.rows);
+          console.log("found");
+          return res.send(result);
+        }
+        
       } else {
         res.status(401).send({message: " Wrong email/password!"});
       }
