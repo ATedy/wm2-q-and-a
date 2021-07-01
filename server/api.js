@@ -1,31 +1,36 @@
 import {Router} from "express";
 import pool from "./db";
 const router = new Router();
-// const express = require('express');
-// const {poo/l} = require('./db');
+// new packages
+
+const passport = require('passport');
+const passportLocal = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 
 router.get("/", (req, res) => {
   res.json({message: "Your Backend Service is Running"});
 });
 
 //signup
-router.post("/signUp", (req, res) => {
+router.post("/signUp", async(req, res) => {
   console.log(req.body);
   const newName = req.body.name;
   const newEmail = req.body.email;
   const newPassword = req.body.password;
-  // const { newName, newEmail, newPassword} = req.body;
-  console.log(pool);
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+  console.log(hashedPassword);
+
   pool
     .query("SELECT * FROM users WHERE users.email=$1", [newEmail])
     .then((result) => {
       if (result.rows.length > 0) {
         return res.status(400).send("A user with this email already exists!");
-      } else {
+      } else { 
+       
         const query =
           "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)";
         pool
-          .query(query, [newName, newEmail, newPassword])
+          .query(query, [newName, newEmail, hashedPassword])
           .then(() => res.send("user created!"))
           .catch((err) => console.error(err));
       }

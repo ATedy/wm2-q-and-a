@@ -14,8 +14,6 @@ const Login = (props) => {
       headers: {"content-type": "application/json"},
       body: JSON.stringify(newUser),
     }).then((response) => console.log(response));
-
-    console.log(addedUser);
   };
 
   const submitHandler = (e) => {
