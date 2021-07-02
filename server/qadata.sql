@@ -17,6 +17,7 @@ CREATE TABLE users (
   password          VARCHAR(200) NOT NULL,
   UNIQUE (email)
 );
+
 INSERT INTO questions (id, title, body, tags) VALUES ('10','Why is my code not working? ', 'Please see the photo', 'hjnrkjdmf');
 INSERT INTO answers (questions_id, answer_title , answer_body) VALUES ('10' ,'Hi ', 'Your code');
 INSERT INTO users (name, email, password) VALUES ('Monique ',  'moniqueking57@gmail.com', 'hhhh');
