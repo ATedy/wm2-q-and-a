@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 
 
 const OpenQuestions = () => {
-      let history = useHistory();
   const [questions, setQuestions] = useState([]);
+      let history = useHistory();
+  
   useEffect(async () => {
     try {
       const res = await fetch('/api/questions');

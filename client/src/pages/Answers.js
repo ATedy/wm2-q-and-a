@@ -2,8 +2,6 @@ import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
-
-
 const OpenQuestions = () => {
       let history = useHistory();
   const [questions, setQuestions] = useState([]);
@@ -20,7 +18,6 @@ const OpenQuestions = () => {
       console.log(error);
     }
   }, []);
- 
   return (
     <section>
       <header className="header">
@@ -35,7 +32,6 @@ const OpenQuestions = () => {
           </button>
         </div>
       </header>
-
       <div className="things">
         <section className="sectionContainerAnswers">
           {questions.map((question, index) => {

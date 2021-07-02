@@ -3,8 +3,6 @@ import pool from "./db"
 const router = new Router();
 // const express = require('express');
 // const {poo/l} = require('./db');
-
-
 router.get('/', (req, res) => {
   res.json({message: 'Your Backend Service is Running'});
 });
@@ -75,8 +73,6 @@ router.delete('/questions/:questionsId', (req, res) => {
 //         .then(() => res.send('Answer created!'))
 //           .catch((e) => console.error({message: 'Your answer could not be saved'}));
 // });
-
-
 //signup
 router.post('/users', (req, res) => {
   console.log(req.body);
@@ -90,9 +86,7 @@ router.post('/users', (req, res) => {
     .then((result) => {
       if (result.rows.length > 0) {
         return res.status(400).send('A user with this email already exists!');
-       
       } 
-      
       else {
         const query =
           'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)';
@@ -103,7 +97,6 @@ router.post('/users', (req, res) => {
       }
     });
 });
-
 //Get all answers
 router.get('/answers', function (req, res) {
   pool
@@ -113,7 +106,6 @@ router.get('/answers', function (req, res) {
     .then((result) => res.json(result.rows))
     .catch((e) => console.error(e));
 });
-
 //create a new answer
 router.post('/answers', (req, res) => {
   console.log(req.body)
@@ -139,8 +131,6 @@ router.post('/answers', (req, res) => {
       }
     });
 });
-
-
 // Return a specific answer
 router.get('/answers/:id', function (req, res) {
   const id = parseInt(req.params.id);

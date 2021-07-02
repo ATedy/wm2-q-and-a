@@ -11,7 +11,7 @@ import Thanks from './pages/Thanks';
 
 const App = () => {
   return (
-    <main>
+    <>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -31,14 +31,16 @@ const App = () => {
         <Route path="/AnswerForm">
           <AnswerForm />
         </Route>
+
         <Route path="/Answers">
           <Answers />
         </Route>
         <Route path="/Thanks">
           <Thanks />
+
         </Route>
       </Switch>
-    </main>
+    </>
   );
 };
 

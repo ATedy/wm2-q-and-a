@@ -5,11 +5,18 @@ import React, {useState} from 'react';
 
 
 const QuestionsForm = (props) => {
+
     let history = useHistory();
     const [text, setText] = useState('');
+
+  
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
+  console.log(props.history)
+  let history = useHistory();
+
   const handleTitle = (event) =>{
     const {value}=event.target;
     setTitle(value);
@@ -52,7 +59,7 @@ const QuestionsForm = (props) => {
           Include all the information someone needs to answer your question.
           Sumarise the problem and what you have tried to resolve it.{' '}
         </h6>
-    
+
         <input
           type="text"
           placeholder="My for loop is not iterating properly, please see in the picture what I have written. "
