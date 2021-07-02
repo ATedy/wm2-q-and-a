@@ -5,6 +5,8 @@ const AnswerForm = () => {
   let history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [questionId, setQuestionId] = useState('');
+
 
   const handleTitle = (event) => {
     const {value} = event.target;
@@ -21,8 +23,11 @@ const AnswerForm = () => {
       method: 'POST',
       body: JSON.stringify(newAnswer),
       headers: {'Content-Type': 'application/json'},
+  
     });
-    console.log(res);
+    // console.log(res);
+    console.log(newAnswer)
+    history.push('/Thanks');
   };
 
   return (

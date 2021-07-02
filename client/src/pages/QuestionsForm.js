@@ -1,39 +1,40 @@
-import {useHistory} from 'react-router-dom';
-import React, {useState} from 'react';
+import {useHistory} from "react-router-dom";
+import React, {useState} from "react";
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 const QuestionsForm = (props) => {
-  const [text, setText] = useState('');
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const [tags, setTags] = useState('');
-  console.log(props.history)
   let history = useHistory();
+  const [text, setText] = useState("");
 
-  const handleTitle = (event) =>{
-    const {value}=event.target;
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState("");
+
+  const handleTitle = (event) => {
+    const {value} = event.target;
     setTitle(value);
   };
-   const handleBody = (event) => {
-     const {value} = event.target;
-     setBody(value);
-   };
-     const handleTags = (event) => {
-       const {value} = event.target;
-       setTags(value);
-     };
-     const handleSubmit = async(event) => {
-       event.preventDefault();
-       const newQuestion = {title, body, tags};
-       const res = await fetch('/api/questions', {
-         method: "POST", 
-         body: JSON.stringify(newQuestion),
-         headers: {"Content-Type": "application/json"},
-       });
-       console.log(res)
-       history.push('/OpenQuestions');
-     }
+  const handleBody = (event) => {
+    const {value} = event.target;
+    setBody(value);
+  };
+  const handleTags = (event) => {
+    const {value} = event.target;
+    setTags(value);
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const newQuestion = {title, body, tags};
+    console.log(newQuestion);
+    const res = await fetch("/api/questions", {
+      method: "POST",
+      body: JSON.stringify(newQuestion),
+      headers: {"Content-Type": "application/json"},
+    });
+    console.log(newQuestion);
+    history.push("/Thanks");
+  };
 
   return (
     <div className="questionFormContainer">
@@ -50,9 +51,9 @@ const QuestionsForm = (props) => {
         <h3>Body</h3>
         <h6>
           Include all the information someone needs to answer your question.
-          Sumarise the problem and what you have tried to resolve it.{' '}
+          Sumarise the problem and what you have tried to resolve it.{" "}
         </h6>
-     
+
         <input
           type="text"
           placeholder="My for loop is not iterating properly, please see in the picture what I have written. "
@@ -73,10 +74,10 @@ const QuestionsForm = (props) => {
           onChange={handleTags}
         />
       </form>
-        <button className="btn" type="submit" onClick={handleSubmit}>
-          Ask!
-        </button>
-      <button className="btn" type="submit" onClick={() => history.push('/')}>
+      <button className="btn" type="submit" onClick={handleSubmit}>
+        Ask!
+      </button>
+      <button className="btn" type="submit" onClick={() => history.push("/")}>
         Cancel
       </button>
     </div>
