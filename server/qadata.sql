@@ -17,10 +17,10 @@ CREATE TABLE users (
   password          VARCHAR(200) NOT NULL,
   UNIQUE (email)
 );
-INSERT INTO questions (id, title, body, tags) VALUES ('6','Why is my code not working? ', 'Please see the photo', 'hjnrkjdmf');
--- INSERT INTO answers (questions_id, answer_title , answer_body) VALUES ('1' ,'Hi ', 'Your code');
-INSERT INTO users (id, name, email, password) VALUES ('1','Monique ',  'moniqueking57@gmail.com', 'hhhh');
-INSERT INTO users (id, name, email, password) VALUES ('2','Amanuel ',  'amanueltedros@gmail.com', 'hhhh');
+INSERT INTO questions (id, title, body, tags) VALUES ('10','Why is my code not working? ', 'Please see the photo', 'hjnrkjdmf');
+INSERT INTO answers (questions_id, answer_title , answer_body) VALUES ('10' ,'Hi ', 'Your code');
+INSERT INTO users (name, email, password) VALUES ('Monique ',  'moniqueking57@gmail.com', 'hhhh');
+INSERT INTO users (name, email, password) VALUES ('Amanuel ',  'amanueltedros@gmail.com', 'hhhh');
 
 
 
