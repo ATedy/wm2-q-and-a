@@ -5,6 +5,8 @@ const AnswerForm = () => {
   let history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [questionId, setQuestionId] = useState('');
+
 
   const handleTitle = (event) => {
     const {value} = event.target;
@@ -16,13 +18,15 @@ const AnswerForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newAnswer = {title, body};
+    const newAnswer = {questionId, title, body};
     const res = await fetch('/api/answers', {
       method: 'POST',
       body: JSON.stringify(newAnswer),
       headers: {'Content-Type': 'application/json'},
+  
     });
-    console.log(res);
+    // console.log(res);
+    console.log(newAnswer)
   };
 
   return (
@@ -47,7 +51,7 @@ const AnswerForm = () => {
           onChange={handleBody}
         />
       </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
+      <button className="btn" type="submit" onClick={() => history.push('/Thanks')}>
         Answer!
       </button>
       <button className="btn" type="submit" onClick={() => history.push('/')}>

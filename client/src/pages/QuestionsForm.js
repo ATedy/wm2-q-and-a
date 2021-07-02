@@ -3,8 +3,14 @@ import React, {useState} from 'react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 
+
 const QuestionsForm = (props) => {
-  const [text, setText] = useState('');
+
+    let history = useHistory();
+    const [text, setText] = useState('');
+
+  
+
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [tags, setTags] = useState('');
@@ -26,13 +32,14 @@ const QuestionsForm = (props) => {
      const handleSubmit = async(event) => {
        event.preventDefault();
        const newQuestion = {title, body, tags};
+         console.log(newQuestion)
        const res = await fetch('/api/questions', {
          method: "POST", 
          body: JSON.stringify(newQuestion),
          headers: {"Content-Type": "application/json"},
        });
-       console.log(res)
-       history.push('/OpenQuestions');
+       console.log(newQuestion)
+       history.push('/Thanks');
      }
 
   return (
@@ -52,7 +59,7 @@ const QuestionsForm = (props) => {
           Include all the information someone needs to answer your question.
           Sumarise the problem and what you have tried to resolve it.{' '}
         </h6>
-     
+
         <input
           type="text"
           placeholder="My for loop is not iterating properly, please see in the picture what I have written. "
