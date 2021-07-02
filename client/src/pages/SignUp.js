@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link, useHistory} from "react-router-dom";
 
-const Login = (props) => {
+const signUp = (props) => {
   let history = useHistory();
 
   const [name, setName] = useState("");
@@ -87,4 +87,4 @@ const Login = (props) => {
 
 
 
-export default Login;
+export default signUp;

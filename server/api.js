@@ -2,15 +2,15 @@ import {Router} from "express";
 import pool from "./db";
 const router = new Router();
 // new packages
-const initializePassport = require('./passport-config');
-const bcrypt = require('bcrypt');
+const initializePassport = require("./passport-config");
+const bcrypt = require("bcrypt");
 
 router.get("/", (req, res) => {
   res.json({message: "Your Backend Service is Running"});
 });
 
 //signup
-router.post("/signUp", async(req, res) => {
+router.post("/signUp", async (req, res) => {
   console.log(req.body);
   const newName = req.body.name;
   const newEmail = req.body.email;
@@ -23,8 +23,7 @@ router.post("/signUp", async(req, res) => {
     .then((result) => {
       if (result.rows.length > 0) {
         return res.status(400).send("A user with this email already exists!");
-      } else { 
-       
+      } else {
         const query =
           "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)";
         pool
@@ -35,27 +34,30 @@ router.post("/signUp", async(req, res) => {
     });
 });
 
-router.post("/login", async(req, res) => {
+router.post("/login", async (req, res) => {
   console.log(req.body);
   const newEmail = req.body.email;
   const newPassword = req.body.password;
-  const hashedPassword = await bcrypt.hash(newPassword, 10);
-  console.log(hashedPassword);
-  // const { newName, newEmail, newPassword} = req.body;
-pool
-    .query("SELECT * FROM users WHERE users.email", [
-      newEmail,
-    ])
-    .then(async(result) => {
+  pool
+    .query("SELECT * FROM users WHERE users.email=$1", [newEmail])
+    .then(async (result) => {
       if (result.rows.length > 0) {
-        if(await bcrypt.compare(newPassword, result.rows[0].password)){
+      //  if the email exist it will compare the password with the stored one
+        let validPassword = await bcrypt.compare(
+          newPassword,
+          result.rows[0].password
+        );
+        if (validPassword) {
           console.log(result.rows);
-          console.log("found");
-          return res.send(result);
+
+          return res.status(200).send(result);
+        } else {
+          res.status(400).json({error: "Invalid Password"});
+     
         }
-        
       } else {
-        res.status(401).send({message: " Wrong email/password!"});
+        res.status(401).json({error: "User does not exist"});
+        
       }
     })
     .catch((err) => {
@@ -63,7 +65,6 @@ pool
       return res.status(500).send({error: err});
     });
 });
-
 
 //Get all questions
 router.get("/questions", function (req, res) {
@@ -141,6 +142,5 @@ router.get("/answers", function (req, res) {
     .then((result) => res.json(result.rows))
     .catch((e) => console.error(e));
 });
-
 
 export default router;

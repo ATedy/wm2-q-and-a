@@ -13,27 +13,25 @@ const Login = () => {
       headers: {"content-type": "application/json"},
       body: JSON.stringify(user),
     }).then((response) => {
-      console.log(response.ok);
-      if(!response.ok){
+      console.log(response);
+      if (!response.ok) {
         alert("wrong password/email");
         history.push("/Login");
         setEmail("");
-      setPassword("");
-      }
-      console.log(response);
-      setEmail("");
-      setPassword("");
+        setPassword("");
+      } else {
+        setEmail("");
+        setPassword("");
 
-      history.push("/OpenQuestions");
-    })
+        history.push("/OpenQuestions");
+      }
+    });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(`${email}, ${password}`);
+
     login({email, password});
-   
-   
   };
 
   return (
@@ -48,11 +46,13 @@ const Login = () => {
         <p>Log in to Ask a Question</p>
 
         <input
+          required
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          required
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
