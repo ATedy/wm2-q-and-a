@@ -1,8 +1,8 @@
 import {Router} from "express";
 import pool from "./db";
 const router = new Router();
-// new packages
-const initializePassport = require("./passport-config");
+
+// const initializePassport = require("./passport-config");
 const bcrypt = require("bcrypt");
 
 router.get("/", (req, res) => {

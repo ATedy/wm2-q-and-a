@@ -28,6 +28,7 @@ const signUp = (props) => {
 
         setEmail("");
       } else if (password.length < 6) {
+
         alert('Please password is too short');
         setEmail("");
         history.push("/signUp");
@@ -74,6 +75,7 @@ const signUp = (props) => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        
         {/* <input type="submit" value="Sign Up"/> */}
         <button type="submit">Sign Up</button>
       </form>

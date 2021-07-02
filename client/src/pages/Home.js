@@ -62,19 +62,6 @@ export function Home(props) {
         </section>
       </main>
       <Footer />
-      {/* <section className="footer-section">
-        <footer className="list-footer">
-          <ul className="list">
-            <li>Facebook
-              
-            </li>
-            <li>Instagram</li>
-            <li>Twitter</li>
-            <li>website</li>
-            <li>Copyright</li>
-          </ul>
-        </footer>
-      </section> */}
     </div>
   );
 }
