@@ -14,10 +14,12 @@ const OpenQuestions = () => {
        const answersunpacked = await answers.json();
       setQuestions(questionsunpacked);
       setAnswers(answersunpacked);
+
     } catch (error) {
       console.log(error);
     }
   }, []);
+
   return (
     <section>
       <header className="header">

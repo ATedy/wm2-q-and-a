@@ -1,11 +1,73 @@
 import {Router} from 'express';
 import pool from "./db"
 const router = new Router();
-// const express = require('express');
-// const {poo/l} = require('./db');
-router.get('/', (req, res) => {
-  res.json({message: 'Your Backend Service is Running'});
+
+
+// const initializePassport = require("./passport-config");
+const bcrypt = require("bcrypt");
+
+router.get("/", (req, res) => {
+  res.json({message: "Your Backend Service is Running"});
+
 });
+
+//signup
+router.post("/signUp", async (req, res) => {
+  console.log(req.body);
+  const newName = req.body.name;
+  const newEmail = req.body.email;
+  const newPassword = req.body.password;
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+  console.log(hashedPassword);
+
+  pool
+    .query("SELECT * FROM users WHERE users.email=$1", [newEmail])
+    .then((result) => {
+      if (result.rows.length > 0) {
+        return res.status(400).send("A user with this email already exists!");
+      } else {
+        const query =
+          "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)";
+        pool
+          .query(query, [newName, newEmail, hashedPassword])
+          .then(() => res.send("user created!"))
+          .catch((err) => console.error(err));
+      }
+    });
+});
+
+router.post("/login", async (req, res) => {
+  console.log(req.body);
+  const newEmail = req.body.email;
+  const newPassword = req.body.password;
+  pool
+    .query("SELECT * FROM users WHERE users.email=$1", [newEmail])
+    .then(async (result) => {
+      if (result.rows.length > 0) {
+      //  if the email exist it will compare the password with the stored one
+        let validPassword = await bcrypt.compare(
+          newPassword,
+          result.rows[0].password
+        );
+        if (validPassword) {
+          console.log(result.rows);
+
+          return res.status(200).send(result);
+        } else {
+          res.status(400).json({error: "Invalid Password"});
+     
+        }
+      } else {
+        res.status(401).json({error: "User does not exist"});
+        
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.status(500).send({error: err});
+    });
+});
+
 //Get all questions
 router.get('/questions', function (req, res) {
   pool
@@ -62,17 +124,8 @@ router.delete('/questions/:questionsId', (req, res) => {
       );
   }
 });
-// Create new answer
-// router.post('/answers', (req, res) => {
-//   const newTitle = req.body.title;
-//   const newBody = req.body.body;
-//   console.log(newTitle)
-//   console.log(newBody)
-//   pool
-//     .query('INSERT INTO answers (answer_title , answer_body) VALUES ($1, $2)', [newTitle, newBody])
-//         .then(() => res.send('Answer created!'))
-//           .catch((e) => console.error({message: 'Your answer could not be saved'}));
-// });
+
+
 //signup
 router.post('/users', (req, res) => {
   console.log(req.body);
@@ -144,3 +197,4 @@ router.get('/answers/:id', function (req, res) {
   }
 });
 export default router;
+

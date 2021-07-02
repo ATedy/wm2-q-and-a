@@ -5,29 +5,33 @@ const Login = () => {
   let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const login = async (user) => {
     const searchedUser = await fetch("/api/login", {
       method: "POST",
       headers: {"content-type": "application/json"},
       body: JSON.stringify(user),
-    }).then((response) => console.log(response));
+    }).then((response) => {
+      console.log(response);
+      if (!response.ok) {
+        alert("wrong password/email");
+        history.push("/Login");
+        setEmail("");
+        setPassword("");
+      } else {
+        setEmail("");
+        setPassword("");
+
+        history.push("/OpenQuestions");
+      }
+    });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(!email || !password){
-      alert('Please enter your email and password')
-    }
-    else{
-      login({email, password});
-      console.log(`${email}, ${password}`);
-  
-      setEmail("");
-      setPassword("");
-      history.push("/OpenQuestions");
-    }
-   
+
+    login({email, password});
   };
 
   return (
@@ -42,11 +46,13 @@ const Login = () => {
         <p>Log in to Ask a Question</p>
 
         <input
+          required
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          required
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
