@@ -125,7 +125,6 @@ section button {
 section:nth-child(1){
   background-color: #e99f4c;
   color: #f2ebe9;
-  margin: 20px;
 }
 section:nth-child(1) button {
    color: #f2ebe9;
