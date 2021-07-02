@@ -10,13 +10,6 @@ CREATE TABLE questions (
   tags        VARCHAR(500) NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
---creation date 
-  -- created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  -- updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  -- completed_at TIMESTAMPTZ
-  -- questions_id    INT NOT NULL,
-  --   FOREIGN KEY (questions_id) REFERENCES questions (id)
-
 
 CREATE TABLE answers (
   answer_id              SERIAL PRIMARY KEY,
@@ -25,11 +18,6 @@ CREATE TABLE answers (
   questions_id    INT NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (questions_id) REFERENCES questions (id)
-);
-
-CREATE TABLE tags (
-   id          SERIAL PRIMARY KEY,
-   words       VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE users (

@@ -5,7 +5,7 @@ const AnswerForm = () => {
   let history = useHistory();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  // const [questionId, setQuestionId] = useState('');
+  const [questionId, setQuestionId] = useState('');
 
 
   const handleTitle = (event) => {
