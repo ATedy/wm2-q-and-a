@@ -18,7 +18,7 @@ const AnswerForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newAnswer = {questionId, title, body};
+    const newAnswer = {title, body};
     const res = await fetch('/api/answers', {
       method: 'POST',
       body: JSON.stringify(newAnswer),
@@ -27,6 +27,7 @@ const AnswerForm = () => {
     });
     // console.log(res);
     console.log(newAnswer)
+    history.push('/Thanks');
   };
 
   return (
@@ -51,7 +52,7 @@ const AnswerForm = () => {
           onChange={handleBody}
         />
       </form>
-      <button className="btn" type="submit" onClick={() => history.push('/Thanks')}>
+      <button className="btn" type="submit" onClick={handleSubmit}>
         Answer!
       </button>
       <button className="btn" type="submit" onClick={() => history.push('/')}>
