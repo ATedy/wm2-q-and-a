@@ -5,21 +5,63 @@ import Feature from "./particles";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 
-export function Home(props) {
+
+export function Home() {
+  const [message, setMessage] = useState("Loading...");
+  const [submit, setSubmit] = useState("");
+
   return (
-    <div className="wrapper">
-      <NavBar />
-      <main>
+    <main role="main">
+      <header className="header">
+        <img
+          className="img-logo"
+          src="https://images-platform.99static.com/O1gSHEEF4AvFdCYpaeSzFp7iYY0=/500x500/top/smart/99designs-contests-attachments/26/26007/attachment_26007734"
+          alt="logo-image"
+        />
+
+        <nav className="navBar">
+          <div className="ui search">
+            <div ui icon-input>
+              <input
+                type="text"
+                placeholder="Search.."
+                className="prompt"
+                onClick="{}"
+              />
+              <button type="submit" onClick="{}">
+                {" "}
+                Submit
+              </button>
+              <i className="search icon"></i>
+            </div>
+          </div>
+          <p>Q U E S T</p>
+
+          <div>
+            <Link className="mr-3 navLinks" to="/SignUp">
+              Sign Up
+            </Link>
+            <Link className="navLinks" to="/login">
+              Login
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      <div>
+        {/* <img className="logo" data-qa="logo" src={logo} alt="Just the React logo" />
+				<h1 className="message" data-qa="message">{message}</h1> */}
         <section className="sectionContainer">
           <h3>Hit an error with your code?</h3>
           <p>
-            ..or just need some guidance on getting started.
-            <br></br>Have no fear, help is near!
+            ..or just need some guidance on getting started. Have no fear help
+            is near!
           </p>
           <p>All you need to do is ask</p>
-          <Link className="questionLinks" to="/QuestionsForm">
-            <button className="btn-center">Ask Question</button>
+          <Link className=“questionLinks” to=“/QuestionsForm”>
+            <button className=“btn-center”>Ask Question</button>
           </Link>
+
         </section>
         <section className="sectionContainer">
           <h3>Your community needs you!</h3>
@@ -31,16 +73,17 @@ export function Home(props) {
             If you are a mentor or even a trainee, you can help unblock someone
             by sharing your knowledge.
           </p>
-          <Link className="openlinks" to="/OpenQuestions">
-            <button className="btn-center">View Open Question</button>
+
+         <Link className=“openlinks” to=“/OpenQuestions”>
+            <button className=“btn-center”>View Open Question</button>
           </Link>
         </section>
-        <section className="answeredSectionContainer">
+          <section className=“answeredSectionContainer”>
           <h3>See all answered questions...</h3>
           <p>...maybe someone else has encountered the same error as you!</p>
           <p>Have a look through all the answers</p>
-          <Link to="/Answers">
-            <button className="btn-center">All Answers</button>
+          <Link to=“/Answers”>
+            <button className=“btn-center”>All Answers</button>
           </Link>
         </section>
         <section className="sectionContainer">
@@ -60,9 +103,21 @@ export function Home(props) {
             </li>
           </ul>
         </section>
-      </main>
-      <Footer />
-    </div>
+
+        <section className="footer-section">
+          <footer className="list-footer">
+            <ul className="list">
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Twitter</li>
+              <li>website</li>
+              <li>Copyright</li>
+            </ul>
+          </footer>
+        </section>
+      </div>
+    </main>
+
   );
 }
 
