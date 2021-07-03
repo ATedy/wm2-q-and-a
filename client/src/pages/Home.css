@@ -17,6 +17,7 @@ position: relative;
   padding:0;
   /* min-width: fit-content; */
   width: 100%;
+min-height: fit-content;
 
 
 }
@@ -27,12 +28,12 @@ position: relative;
      margin:0;
     padding:0;
     min-width: fit-content;
-    width: 100%; */
+    width: 100%;
 
 
-  /* } */
+  }
 
-  /* } */
+  } */
 
 #root > main {
   z-index:100;
@@ -182,6 +183,9 @@ form input, form button {
   border-radius: 3px;
    position: relative;
   z-index:100;
+  padding: 1.5rem;
+  border: 3px solid #264143;
+  color: black;
 }
 .questionForm,
 .answerForm{
@@ -191,11 +195,13 @@ form input, form button {
   margin-right: 5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  color: #f2ebe9;
-  background-color: #264143;
+  color: gray;
+  background-color:white;
   border: 3px solid #f2ebe9;
    position: relative;
   z-index:100;
+  padding: 10px;
+  max-width: 1200px;
 }
 .btn{
     display:inline-block;
@@ -311,9 +317,9 @@ width: 100%;
   top: 0;
   background-color:#264143;
   margin-bottom: 3em;
-  /* @media (min-width: 750px) {
+  @media (min-width: 750px) {
 
-  } */
+  }
 
 }
 .navBar p, .navLinks {
@@ -342,6 +348,27 @@ margin: 1em 0 0 2em;
 margin-left: -3em;
 
 
+}
+
+.textarea-style{
+  border:  3px solid #264143;
+  margin: 0.5em;
+  padding: 1.5rem;
+
+}
+.question-form-header{
+  background-color: lightgray;
+}
+.input-label{
+  text-align: left;
+  margin-left: 0.5em;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+.button-form{
+  display: flex;
+  flex-direction: row;
+  background-color: lightgray;
 }
 
 
