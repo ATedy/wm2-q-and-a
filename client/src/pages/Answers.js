@@ -66,7 +66,7 @@ const OpenQuestions = () => {
                       )}
                     })}
                   </div>
-                  <Link to="/AnswerForm">
+                  <Link to={`/AnswerForm/${question.id}`}>
                     <button className="btn" type="submit">
                       Answer!
                     </button>
