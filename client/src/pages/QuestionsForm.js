@@ -82,12 +82,18 @@ const handleData = (event, editor) => {
           onChange={handleTags}
         />
       </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
-        Ask!
-      </button>
-      <button className="btn" type="submit" onClick={() => history.push('/')}>
-        Cancel
-      </button>
+     <div className="button-form">
+          <button className="btn" type="submit" onClick={handleSubmit}>
+            Ask!
+          </button>
+          <button
+            className="btn"
+            type="submit"
+            onClick={() => history.push("/")}
+          >
+            Cancel
+          </button>
+        </div>
     </div>
   );
 };

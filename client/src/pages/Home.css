@@ -108,6 +108,7 @@ body {
   padding: 2%;
   width: 80%;
   margin: 2em auto;
+   z-index:100;
 }
 .answeredSectionContainer button{
  width: 25%;
@@ -138,6 +139,7 @@ section button {
 section:nth-child(1){
   background-color: #e99f4c;
   color: #f2ebe9;
+   z-index:100;
 }
 section:nth-child(1) button {
    color: #f2ebe9;
@@ -222,6 +224,7 @@ form input, form button {
      position: relative;
   z-index:100;
 }
+
 .things{
   margin: 2% auto;
   width: 100%;
@@ -257,6 +260,7 @@ margin-left: 5rem;
     position: relative;
   z-index:100;
   background-color: #f2ebe9;
+  color: black;
 }
 logo-image{
   color:lightcoral;
