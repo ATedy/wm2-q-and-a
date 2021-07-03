@@ -1,11 +1,13 @@
-import {useHistory} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import React, {useState} from 'react';
+
 
 const AnswerForm = () => {
   let history = useHistory();
+  let { questionId } = useParams();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [questionId, setQuestionId] = useState('');
+  // const [questionId, setQuestionId] = useState(5);
 
 
   const handleTitle = (event) => {
@@ -18,7 +20,7 @@ const AnswerForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newAnswer = {title, body};
+    const newAnswer = {questionId, title, body};
     const res = await fetch('/api/answers', {
       method: 'POST',
       body: JSON.stringify(newAnswer),

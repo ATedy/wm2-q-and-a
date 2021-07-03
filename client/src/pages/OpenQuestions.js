@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
+
 const OpenQuestions = () => {
   const [questions, setQuestions] = useState([]);
       let history = useHistory();
@@ -39,9 +40,11 @@ const OpenQuestions = () => {
                 Question Title: {question.title}{' '}
               </span>
               <br></br>
-              <span className="answerBody"> Body: {question.body}</span>
+               {/* <EditorPreview data={question.body} />  */}
+              <span className="answerBody"> 
+              Body: {question.body}</span>
               <br></br>
-              <Link to="/AnswerForm">
+              <Link to={`/AnswerForm/${question.id}`}>
               <button className="btn" type="submit">
                 Answer!
               </button>
