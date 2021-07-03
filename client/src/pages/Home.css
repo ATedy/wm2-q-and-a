@@ -10,8 +10,8 @@
   background-color: yellow;
 }
 .navBar{
-    
-    
+
+
     margin: 2% auto;
     width: 60%;
     padding: 0.1%;
@@ -36,10 +36,14 @@
   width: 60%;
   border: 1px solid black;
   padding: 10px;
+  background-color: tan;
+  color: black;
 }
 .sectionContainer button {
   width: 25%;
   border-radius: 3px;
+  background-color:#fb454e;
+  color: white;
 }
 
 section button {
@@ -49,8 +53,8 @@ section button {
 }
 
 section:nth-child(2) {
-  background-color: #fb454e;
-  color: white;
+  background-color: tan;
+  color:white;
 }
 section:nth-child(2) button {
    color: #fb454e;
@@ -77,4 +81,53 @@ form input, form button {
   height: 2em;
   margin: 0.5em;
   border-radius: 3px;
+  /* color: EBD2BE; */
+}
+.img-logo{
+  width: 30px;
+  margin-left: 50px;
+  position: absolute;
+  border-radius: 20%;
+  background-color:lightyellow;
+  flex-direction: column;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.header{
+  background-color: lightgrey;
+    margin-top: auto;
+  position: relative;
+}
+.footer-section{
+  flex-direction: column-reverse;
+  background-color: lightgrey;
+  padding: 1.5%;
+  border-radius: 2px;
+}
+.list-footer{
+
+  position: relative;
+  justify-content: space-between;
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  color:red;
+  justify-content: space-evenly;
+  position: flex;
+  align-content: flex-start;
+
+}
+.list li{
+  list-style-type: none;
+
+}
+.ui icon-input{
+  flex-direction: column;
+  padding-left: 100px;
+  border-radius: 10px;
+}
+.open-question-button{
+  background-color: #fb454e;
+  color: white;
 }
