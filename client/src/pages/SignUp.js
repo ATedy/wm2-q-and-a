@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {Link, useHistory} from "react-router-dom";
 
-const signUp = (props) => {
+const signUp = () => {
   let history = useHistory();
 
   const [name, setName] = useState("");
