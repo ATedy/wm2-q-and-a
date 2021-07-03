@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import Feature from "./particles";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import Auth from "../utility/Auth";
 
 export function Home(props) {
   return (
@@ -17,7 +18,7 @@ export function Home(props) {
             <br></br>Have no fear, help is near!
           </p>
           <p>All you need to do is ask</p>
-          <Link className="questionLinks" to="/QuestionsForm">
+          <Link className="questionLinks" to={Auth.isAuthorized()?"/QuestionsForm": "/Login"}>
             <button className="btn-center">Ask Question</button>
           </Link>
         </section>
