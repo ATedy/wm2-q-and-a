@@ -1,29 +1,14 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
+import {Link} from "react-router-dom";
 import "./Home.css";
 import logo from "./logo.svg";
+import Feature from "./particles";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+
 
 export function Home() {
   const [message, setMessage] = useState("Loading...");
   const [submit, setSubmit] = useState("");
-
-  // useEffect(() => {
-  //   fetch("/api")
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error(res.statusText);
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((body) => {
-  //       console.log(body[0]);
-  //       setMessage(body[0].questions);
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  // }, []);
 
   return (
     <main role="main">
@@ -73,7 +58,10 @@ export function Home() {
             is near!
           </p>
           <p>All you need to do is ask</p>
-          <button>Ask Question</button>
+          <Link className=“questionLinks” to=“/QuestionsForm”>
+            <button className=“btn-center”>Ask Question</button>
+          </Link>
+
         </section>
         <section className="sectionContainer">
           <h3>Your community needs you!</h3>
@@ -85,7 +73,18 @@ export function Home() {
             If you are a mentor or even a trainee, you can help unblock someone
             by sharing your knowledge.
           </p>
-          <button className="open-question-button">View Open Question</button>
+
+         <Link className=“openlinks” to=“/OpenQuestions”>
+            <button className=“btn-center”>View Open Question</button>
+          </Link>
+        </section>
+          <section className=“answeredSectionContainer”>
+          <h3>See all answered questions...</h3>
+          <p>...maybe someone else has encountered the same error as you!</p>
+          <p>Have a look through all the answers</p>
+          <Link to=“/Answers”>
+            <button className=“btn-center”>All Answers</button>
+          </Link>
         </section>
         <section className="sectionContainer">
           <h3>Latest questions</h3>
@@ -104,6 +103,7 @@ export function Home() {
             </li>
           </ul>
         </section>
+
         <section className="footer-section">
           <footer className="list-footer">
             <ul className="list">
@@ -117,6 +117,7 @@ export function Home() {
         </section>
       </div>
     </main>
+
   );
 }
 

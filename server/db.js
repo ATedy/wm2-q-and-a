@@ -12,18 +12,18 @@ if (process.env.DATABASE_URL) {
 	};
 	
 }
-
- else  {// local
+else  {// local
  
 	config = {
 		user: process.env.DB_USER,
 		host: process.env.DB_HOST,
-		database: "q_a",
+		database: "qadata",
 		password: process.env.DB_PASS,
 		port: 5432,
 	};
 }
 const pool = new Pool(config);
+
 export const connectDb = async () => {
     let client;
 	try {
@@ -37,12 +37,5 @@ export const connectDb = async () => {
 };
 export const disconnectDb = () => pool.close();
 export default { query: pool.query.bind(pool) };
-
-
-
-
-
-
-
 
 
