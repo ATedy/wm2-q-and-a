@@ -1,7 +1,6 @@
 import {Router} from 'express';
 import pool from "./db";
 const router = new Router();
-const initializePassport = require("./passport-config");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 

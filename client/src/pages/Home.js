@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Auth from "../utility/Auth";
 
-export function Home(props) {
+export function Home() {
   return (
     <div className="wrapper">
       <NavBar />
@@ -18,7 +18,10 @@ export function Home(props) {
             <br></br>Have no fear, help is near!
           </p>
           <p>All you need to do is ask</p>
-          <Link className="questionLinks" to={Auth.isAuthorized()?"/QuestionsForm": "/Login"}>
+          <Link
+            className="questionLinks"
+            to={Auth.isAuthorized() ? "/QuestionsForm" : "/Login"}
+          >
             <button className="btn-center">Ask Question</button>
           </Link>
         </section>
@@ -40,7 +43,10 @@ export function Home(props) {
           <h3>See all answered questions...</h3>
           <p>...maybe someone else has encountered the same error as you!</p>
           <p>Have a look through all the answers</p>
-          <Link to="/Answers">
+          <Link
+            className="questionLinks"
+            to={Auth.isAuthorized() ? "/Answers" : "/Login"}
+          >
             <button className="btn-center">All Answers</button>
           </Link>
         </section>
