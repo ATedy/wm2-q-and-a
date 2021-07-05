@@ -1,26 +1,10 @@
 import {Router} from 'express';
-import pool from "./db"
+import pool from "./db";
 const router = new Router();
 
-// const db = require("./db");
-// // const customerSelectQuery = `select * from questions`;
-// router.get("/", (_, res) => {
-//   // res.json({ message: "Hello, world!" });
-
-//   pool
-//     .query("SELECT * FROM questions;")
-//     .then((result) => {
-//       // console.log(result.rows);
-//       res.send(result.rows);
-//     })
-//     .catch((err) => console.log(err));
-// });
-
-
-
-
-// const initializePassport = require("./passport-config");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 
 router.get("/", (req, res) => {
   res.json({message: "Your Backend Service is Running"});
@@ -66,9 +50,10 @@ router.post("/login", async (req, res) => {
           result.rows[0].password
         );
         if (validPassword) {
-          console.log(result.rows);
-
-          return res.status(200).send(result);
+          // console.log(result);
+          const token = jwt.sign({sub: result.rows[0].id}, process.env.SECRET, {expiresIn: "12h"})
+      console.log({id: result.rows[0].id, token});
+          return res.status(200).send({id: result.rows[0].id, email: result.rows[0].email,token});
         } else {
           res.status(400).json({error: "Invalid Password"});
      
