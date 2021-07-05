@@ -16,7 +16,6 @@ const Login = () => {
         Auth.setToken(response.data.token);
         localStorage.setItem("email", response.data.email);
         history.push("/");
-        console.log(response);
       })
       .catch((error) => {
         setError("Login not Successful");
