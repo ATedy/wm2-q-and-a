@@ -35,7 +35,7 @@ const signUp = () => {
       } else {
         onAddUser({name, email, password});
         console.log(`${name}, ${email}, ${password}`);
-        history.push("/OpenQuestions");
+        history.push("/Login");
         setName("");
         setEmail("");
         setPassword("");
