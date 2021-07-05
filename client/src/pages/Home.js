@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {useEffect, useState} from 'react';
 import "./Home.css";
 import logo from "./logo.svg";
 import Feature from "./particles";
@@ -7,6 +8,19 @@ import Footer from "./Footer";
 import Auth from "../utility/Auth";
 
 export function Home() {
+  const [latestQuestions, setLatestQuestions] = useState([]);
+      // let history = useHistory();
+  
+  useEffect(async () => {
+    try {
+      const res = await fetch('/api/questions');
+      const data = await res.json();
+      setLatestQuestions(data);
+      console.log(latestQuestions);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
   return (
     <div className="wrapper">
       <NavBar />
