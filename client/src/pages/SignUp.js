@@ -9,7 +9,7 @@ const signUp = () => {
   const [password, setPassword] = useState("");
 
   const onAddUser = async (newUser) => {
-    const addedUser = await fetch("/api/signUp", {
+    fetch("/api/signUp", {
       method: "POST",
       headers: {"content-type": "application/json"},
       body: JSON.stringify(newUser),
@@ -35,7 +35,7 @@ const signUp = () => {
       } else {
         onAddUser({name, email, password});
         console.log(`${name}, ${email}, ${password}`);
-        history.push("/OpenQuestions");
+        history.push("/Login");
         setName("");
         setEmail("");
         setPassword("");
