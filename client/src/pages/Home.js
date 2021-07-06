@@ -15,7 +15,7 @@ export function Home() {
     try {
       const res = await fetch('/api/questions');
       const data = await res.json();
-      setLatestQuestions(data);
+      setLatestQuestions(...data);
       console.log(latestQuestions);
     } catch (error) {
       console.log(error);
