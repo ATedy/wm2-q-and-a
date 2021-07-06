@@ -13,18 +13,18 @@ const apiRoot = "/api";
 const staticDir = path.join(__dirname, "static");
 
 const app = express();
-app.use(cors({
-	origin: "https://localhost:3000",
-	credentials: true
-}))
+// app.use(cors({
+// 	origin: "https://localhost:3000",
+// 	credentials: true
+// }))
 
-app.use(session({
-	secret: "secretcode",
-	resave: true,
-	saveUninitalized: true
-}));
+// app.use(session({
+// 	secret: "secretcode",
+// 	resave: true,
+// 	saveUninitalized: true
+// }));
 
-app.use(cookieParser("secertcode"))
+// app.use(cookieParser("secertcode"))
 
 app.use(express.json()); 
 app.use(configuredHelmet());
