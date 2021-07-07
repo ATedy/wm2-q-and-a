@@ -5,6 +5,7 @@ const { merge } = require("webpack-merge");
 const common = require("./common.config");
 const { devDependencies } = require("../../package.json");
 
+
 module.exports = merge(common, {
 	devtool: "source-map",
 	mode: "production",

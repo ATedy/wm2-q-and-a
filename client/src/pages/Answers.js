@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
+import parse from "html-react-parser";
+
 const OpenQuestions = () => {
       let history = useHistory();
   const [questions, setQuestions] = useState([]);
@@ -60,7 +62,9 @@ const OpenQuestions = () => {
                           <br></br>
                           <span className="answerBody">
                             {' '}
-                            {answer.answer_body}
+                            
+                            {parse(answer.answer_body)}
+              
                           </span>
                         </div>
                       )}

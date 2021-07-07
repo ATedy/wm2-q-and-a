@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
+import parse from "html-react-parser";
 
 
 
@@ -40,10 +41,8 @@ const OpenQuestions = () => {
                 Question Title: {question.title}{' '}
               </span>
               <br></br>
-               {/* <EditorPreview data={question.body} />  */}
               <span className="answerBody"> 
-              Body: {question.body}</span>
-              <br></br>
+              Body: {parse(question.body)}</span>
               <Link to={`/AnswerForm/${question.id}`}>
               <button className="btn" type="submit">
                 Answer!

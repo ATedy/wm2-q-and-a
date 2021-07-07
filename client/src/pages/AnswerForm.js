@@ -1,66 +1,78 @@
 import {useHistory, useParams} from 'react-router-dom';
 import React, {useState} from 'react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {CKEditor} from '@ckeditor/ckeditor5-react';
 
 
 const AnswerForm = () => {
   let history = useHistory();
   let { questionId } = useParams();
   const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  // const [questionId, setQuestionId] = useState(5);
-
+  const [data, setData] = useState('');
 
   const handleTitle = (event) => {
     const {value} = event.target;
     setTitle(value);
   };
-  const handleBody = (event) => {
-    const {value} = event.target;
-    setBody(value);
+
+  const handleData = (event, editor) => {
+    const value = editor.getData();
+    setData(value);
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const newAnswer = {questionId, title, body};
+    const newAnswer = {questionId, title, body: data};
+    console.log(data)
     const res = await fetch('/api/answers', {
       method: 'POST',
       body: JSON.stringify(newAnswer),
       headers: {'Content-Type': 'application/json'},
   
     });
-    // console.log(res);
-    console.log(newAnswer)
     history.push('/Thanks');
   };
 
   return (
-      <section> 
-    <div className="answerFormContainer">
-      <form className="answerForm">
-        <h1>Do you have the answer?</h1>
-        <h3>Title</h3>
-        <h6>Try to be as specific as you can!</h6>
-        <input
-          type="text"
-          placeholder="Your loop not iterating"
-          onChange={handleTitle}
-        />
-        <h3>Body</h3>
-        <h6>
-          Include all the information you can to help answer the question.{' '}
-        </h6>
-        <input
-          type="text"
-          placeholder="I was stuck too, but then... "
-          onChange={handleBody}
-        />
-      </form>
-      <button className="btn" type="submit" onClick={handleSubmit}>
-        Answer!
-      </button>
-      <button className="btn" type="submit" onClick={() => history.push('/')}>
-        Cancel
-      </button>
-    </div>
+    <section>
+      <div className="answerFormContainer">
+        <form className="answerForm">
+          <h1>Do you have the answer?</h1>
+          <br></br>
+          <h3>Title</h3>
+          <h6>Try to be as specific as you can!</h6>
+          <input
+            type="text"
+            placeholder="Your loop is not iterating because..."
+            onChange={handleTitle}
+          />
+          <h3>Answer</h3>
+          <h6>Add in all the information you can to help someone out!</h6>
+          <div className="form">
+            <CKEditor
+              editor={ClassicEditor}
+              data={data}
+              // config={{removePlugins: [ 'Heading', 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote'  ],
+              // toolbar: [], 
+              // enterMode: ENTER_DIV,
+              // shiftEnterMode: ENTER_BR,
+              // allowedContent: true;
+              // }
+              // }
+              onReady={(editor) => {
+                console.log('Type your question here', editor);
+              }}
+              onChange={handleData}
+            />
+          </div>
+        </form>
+        <button className="btn" type="submit" onClick={handleSubmit}>
+          Answer!
+        </button>
+        <button className="btn" type="submit" onClick={() => history.push('/')}>
+          Cancel
+        </button>
+      </div>
     </section>
   );
 };
