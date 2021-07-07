@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom';
 import './Home.css';
-import Feature from './particles';
 import NavBar from './NavBar';
 import Footer from './Footer';
 

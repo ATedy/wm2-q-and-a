@@ -12,10 +12,10 @@ const OpenQuestions = () => {
     try {
       const questions = await fetch('/api/questions');
       const answers = await fetch('/api/answers');
-       const questionsunpacked = await questions.json()
-       const answersunpacked = await answers.json();
-      setQuestions(questionsunpacked);
-      setAnswers(answersunpacked);
+       const questionsUnpacked = await questions.json()
+       const answersUnpacked = await answers.json();
+      setQuestions(questionsUnpacked);
+      setAnswers(answersUnpacked);
 
     } catch (error) {
       console.log(error);
@@ -54,20 +54,18 @@ const OpenQuestions = () => {
                        if(question.id === answer.questions_id){
                       console.log(answer);
                       return (
-                        <div key={i}>
+                        <div key={i} className="abody">
                           <span className="answerBody">
                             {' '}
-                            Answer: {answer.answer_title}
+                            {answer.answer_title}
                           </span>
                           <br></br>
                           <span className="answerBody">
                             {' '}
-                            
                             {parse(answer.answer_body)}
-              
                           </span>
                         </div>
-                      )}
+                      );}
                     })}
                   </div>
                   <Link to={`/AnswerForm/${question.id}`}>

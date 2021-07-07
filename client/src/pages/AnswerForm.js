@@ -52,15 +52,8 @@ const AnswerForm = () => {
             <CKEditor
               editor={ClassicEditor}
               data={data}
-              // config={{removePlugins: [ 'Heading', 'bold', 'italic', 'bulletedList', 'numberedList', 'blockQuote'  ],
-              // toolbar: [], 
-              // enterMode: ENTER_DIV,
-              // shiftEnterMode: ENTER_BR,
-              // allowedContent: true;
-              // }
-              // }
               onReady={(editor) => {
-                console.log('Type your question here', editor);
+                console.log(editor);
               }}
               onChange={handleData}
             />

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 
 const signUp = (props) => {
@@ -75,8 +75,6 @@ const signUp = (props) => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        
-        {/* <input type="submit" value="Sign Up"/> */}
         <button type="submit">Sign Up</button>
       </form>
       <p>

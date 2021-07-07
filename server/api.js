@@ -148,7 +148,6 @@ router.post('/users', (req, res) => {
   const newName = req.body.name;
   const newEmail = req.body.email;
   const newPassword = req.body.password;
-  // const { newName, newEmail, newPassword} = req.body;
   console.log(pool);
   pool
     .query('SELECT * FROM users WHERE users.email=$1', [newEmail])

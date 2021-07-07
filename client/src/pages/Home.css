@@ -6,35 +6,24 @@
 .logo {
   width: 100px;
 }
-main{
-  /* margin: 10rem; */
-}
-
 .wrapper{
 position: relative;
   z-index:100;
    margin:0;
   padding:0;
-  /* min-width: fit-content; */
   width: 100%;
 min-height: fit-content;
-
-
 }
-/* @media (min-width:400px){
-  .wrapper{
-    position: relative;
-    z-index:100;
-     margin:0;
-    padding:0;
-    min-width: fit-content;
-    width: 100%;
-
-
-  }
-
-  } */
-
+.abody{
+ background-color: #c6d7d8;
+  color: black;
+ padding: 30px;
+ border: 3px solid black;
+ margin: 30px;
+  z-index:100;
+width:80%;
+margin-left: 5rem;
+}
 #root > main {
   z-index:100;
 }
@@ -46,31 +35,6 @@ z-index: 1;
 height: 100%;
 width: 100%;
 }
-/* .navBar{
-    margin: 0 auto;
-
-    width: 100%;
-    padding: 5%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid gray;
-    background-color:#264143;
-    border: 2px solid white;
-    z-index:500;
-    position: fixed;
-    top: 0;
-} */
-/* .navBar p, .navLinks {
-    color: white;
-}
-.navLinks{
-    margin-top: 0.2em;
-}
-.navBar p{
-    font-weight: 800;
-    font-size: 5em;
-} */
-
 .questTitle
 {
   display:block;
@@ -88,6 +52,11 @@ color: #264143
 p, h1, h3, h6{
   text-align: center;
 }
+/* .thanksTitle{
+  text-align: center;
+   z-index:100;
+   background-color: white;
+} */
 body {
   font-family: sans-serif;
   background-color: #EDDDD1;
@@ -99,7 +68,6 @@ body {
   padding: 10px;
   border: 2px solid #FFEEDB;
   color: white;
-   /* position: relative; */
   z-index:100;
 }
 .answeredSectionContainer{
@@ -137,7 +105,7 @@ section button {
   margin-inline: 20rem;
 }
 section:nth-child(1){
-  background-color: #e99f4c;
+  /* background-color: #e99f4c; */
   color: #f2ebe9;
    z-index:100;
 }
@@ -215,15 +183,29 @@ form input, form button {
     margin-left: 5rem;
     margin-inline: 10rem;
     position: relative;
-  z-index:100;
+    z-index:100;
 }
-.homeBtn{
+.thxbtn{
+    display:inline-block;
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+    background-color:#e99f4c;
+    border: 3px solid #f2ebe9;
+    color:black;
+    margin-left: 20rem;
+    position: relative;
+    z-index:100;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+/* .homeBtn{
     text-align: center;
     background-color: #e99f4c;
     border: 3px solid #f2ebe9;
      position: relative;
   z-index:100;
-}
+} */
 
 .things{
   margin: 2% auto;
@@ -232,27 +214,19 @@ form input, form button {
   list-style-type:none;
   position: flex;
   justify-content: space-evenly;
-  /* text-align:center; */
-   /* flex-basis: auto; */
-  /* flex-wrap: nowrap; */
    position: relative;
   z-index:100;
 }
 .what{
   background-color: #f2ebe9;
   color: black;
- /* justify-content: space-between; */
  padding: 30px;
- /* border-bottom: 50px; */
- /* flex-direction: column; */
  border: 3px solid black;
  margin: 30px;
-  /* position: relative; */
   z-index:100;
 width:80%;
 margin-left: 5rem;
 }
-
 .openQTitle{
   text-align: center;
   font:  bold 16px/2 fantasy;
@@ -262,17 +236,15 @@ margin-left: 5rem;
   background-color: #f2ebe9;
   color: black;
 }
-logo-image{
+/* logo-image{
   color:lightcoral;
   height: 10px;
   width:auto;
-}
+} */
 header{
   background-color:lightcyan;
 }
-
 /* footer sec */
-
 .list-footer{
   width: 100%;
   height:6rem;
@@ -294,13 +266,13 @@ padding: 0;
 }
 .list li{
   list-style-type: none;
-  color: red;
+  color: White;
   margin-top: 1em;
   height: 100%;
 
 }
 .copyright{
-  color: red;
+  color: white;
   margin-top: 2em ;
 }
 .ui icon-input{
@@ -327,7 +299,7 @@ width: 100%;
 
 }
 .navBar p, .navLinks {
-  color: #FB454E;
+  color: white;
 }
 .navLinks{
   margin-top: 0.3em;
@@ -338,27 +310,20 @@ width: 100%;
 }
 .search{
   display: grid;
-  /* width: 100%; */
 grid-template-columns: 1fr 1fr;
 place-items: start;
 margin: 1em 0 0 2em;
-
 }
 .login{
   margin-right: 2em;
 }
 .search-bar{
-/* display: flex; */
 margin-left: -3em;
-
-
 }
-
 .textarea-style{
   border:  3px solid #264143;
   margin: 0.5em;
   padding: 1.5rem;
-
 }
 .question-form-header{
   background-color: lightgray;

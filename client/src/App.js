@@ -31,13 +31,11 @@ const App = () => {
         <Route path="/AnswerForm/:questionId">
           <AnswerForm />
         </Route>
-
         <Route path="/Answers">
           <Answers />
         </Route>
         <Route path="/Thanks">
           <Thanks />
-
         </Route>
       </Switch>
     </>

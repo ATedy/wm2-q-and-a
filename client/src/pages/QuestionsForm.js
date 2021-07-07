@@ -6,7 +6,6 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 const QuestionsForm = (props) => {
   let history = useHistory();
-  const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState("");
   const [data, setData] = useState("");
@@ -36,14 +35,11 @@ const handleData = (event, editor) => {
     event.preventDefault();
     console.log(data)
     const newQuestion = {title, body: data, tags};
-
-    console.log(newQuestion);
     const res = await fetch("/api/questions", {
       method: "POST",
       body: JSON.stringify(newQuestion),
       headers: {"Content-Type": "application/json"},
     });
-    console.log(newQuestion);
     history.push("/Thanks");
   };
 
@@ -74,7 +70,6 @@ const handleData = (event, editor) => {
             onChange={handleData}
           />
         </div>
-        {/* <EditorPreview data={data} /> */}
         <h3>Tags</h3>
         <h6>Add up to 5 tags to describe what your question is about.</h6>
         <input

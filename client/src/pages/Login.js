@@ -5,7 +5,6 @@ const Login = () => {
   let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [success, setSuccess] = useState(false);
 
   const login = async (user) => {
     const searchedUser = await fetch("/api/login", {
@@ -60,7 +59,6 @@ const Login = () => {
 
         <button type="submit">Log in</button>
       </form>
-      {/* <p>Forgot your password?</p> */}
       <p>
         Don't have an account?<Link to="/SignUp">Sign Up</Link>
       </p>

@@ -38,11 +38,11 @@ const OpenQuestions = () => {
           <li key={index}>
           <div className="what">
               <span className="answerTitle">
-                Question Title: {question.title}{' '}
+                Question: {question.title}{' '}
               </span>
               <br></br>
               <span className="answerBody"> 
-              Body: {parse(question.body)}</span>
+               {parse(question.body)}</span>
               <Link to={`/AnswerForm/${question.id}`}>
               <button className="btn" type="submit">
                 Answer!
