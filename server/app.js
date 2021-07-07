@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import path from "path";
+require("dotenv").config();
 
 import router from "./api";
 import { configuredHelmet, httpsOnly, logErrors, pushStateRouting } from "./middleware";
