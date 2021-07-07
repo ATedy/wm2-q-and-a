@@ -5,26 +5,11 @@ import path from "path";
 import router from "./api";
 import { configuredHelmet, httpsOnly, logErrors, pushStateRouting } from "./middleware";
 
-const cors = require('cors');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-
 const apiRoot = "/api";
 const staticDir = path.join(__dirname, "static");
 
 const app = express();
-// app.use(cors({
-// 	origin: "https://localhost:3000",
-// 	credentials: true
-// }))
 
-// app.use(session({
-// 	secret: "secretcode",
-// 	resave: true,
-// 	saveUninitalized: true
-// }));
-
-// app.use(cookieParser("secertcode"))
 
 app.use(express.json()); 
 app.use(configuredHelmet());
