@@ -15,8 +15,9 @@ position: relative;
 min-height: fit-content;
 }
 .abody{
- background-color: #c6d7d8;
-  color: black;
+  /* c6d7d8 */
+ background-color: rgb(23, 35, 65);
+  color: #f9fcf8;
  padding: 30px;
  border: 3px solid black;
  margin: 30px;
@@ -65,15 +66,15 @@ body {
   margin: 2em auto;
   width: 80%;
   background-color: #E99F4C;
-  padding: 10px;
+    color: black;
+  padding: 50px;
   border: 2px solid #FFEEDB;
-  color: white;
   z-index:100;
 }
 .answeredSectionContainer{
    background-color: #E99F4C;
-   color: white;
-  padding: 2%;
+   color: black;
+  padding: 50px;
   width: 80%;
   margin: 2em auto;
    z-index:100;
@@ -105,7 +106,7 @@ section button {
   margin-inline: 20rem;
 }
 section:nth-child(1){
-  color: #f2ebe9;
+  color: ;
    z-index:100;
 }
 section:nth-child(1) button {
@@ -213,7 +214,7 @@ section:nth-child(3) button:hover {
 }
 section:nth-child(2) button:hover{
    background-color: #e99f4c;
-  color:white; 
+  color:black; 
 }
 .btn:hover {
   background-color: #264143;
