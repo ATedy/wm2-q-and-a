@@ -4,6 +4,7 @@ const router = new Router();
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 router.get("/", (req, res) => {
   res.json({message: "Your Backend Service is Running"});
@@ -35,6 +36,7 @@ router.post("/signUp", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  
   console.log(req.body);
   const newEmail = req.body.email;
   const newPassword = req.body.password;
