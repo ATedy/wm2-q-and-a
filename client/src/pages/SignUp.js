@@ -78,7 +78,7 @@ const signUp = () => {
         Already have an account? <Link to="/login">Login</Link>
       </p>
 
-      <p onClick={() => history.push('/')}>
+      <p className="cancel" onClick={() => history.push('/')}>
         Cancel 
       </p>
 
