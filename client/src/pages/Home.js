@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import {useEffect, useState} from 'react';
 import "./Home.css";
-import logo from "./logo.svg";
 import Feature from "./particles";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
@@ -10,7 +8,6 @@ import Auth from "../utility/Auth";
 
 export function Home() {
   const [latestQuestions, setLatestQuestions] = useState([]);
-
 
   useEffect(async () => {
     try {
@@ -71,7 +68,7 @@ export function Home() {
           <h3>Latest questions</h3>
           <ul className="list-group">
             <li className="list-group-item list-group-item-action">
-             {latestQuestions.length}
+              {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
               Question-2
