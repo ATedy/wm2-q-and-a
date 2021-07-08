@@ -46,26 +46,29 @@ const OpenQuestions = () => {
                     Question: {question.title}{' '}
                   </span>
                   <br></br>
-                  <span className="answerBody"> {question.body}</span>
+                  <span className="answerBody">
+                    {parse(question.body)}
+                  </span>
                   <br></br>
                   <br></br>
                   <div>
                     {answers.map((answer, i) => {
-                       if(question.id === answer.questions_id){
-                      console.log(answer);
-                      return (
-                        <div key={i} className="abody">
-                          <span className="answerBody">
-                            {' '}
-                            {answer.answer_title}
-                          </span>
-                          <br></br>
-                          <span className="answerBody">
-                            {' '}
-                            {parse(answer.answer_body)}
-                          </span>
-                        </div>
-                      );}
+                      if (question.id === answer.questions_id) {
+                        console.log(answer);
+                        return (
+                          <div key={i} className="abody">
+                            <span className="answerBody">
+                              {' '}
+                              {answer.answer_title}
+                            </span>
+                            <br></br>
+                            <span className="answerBody">
+                              {' '}
+                              {parse(answer.answer_body)}
+                            </span>
+                          </div>
+                        );
+                      }
                     })}
                   </div>
                   <Link to={`/AnswerForm/${question.id}`}>
