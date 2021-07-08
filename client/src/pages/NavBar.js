@@ -1,9 +1,11 @@
-import React from "react"
+import React from "react";
 import {Link, useHistory} from "react-router-dom";
 import Auth from "../utility/Auth";
 
 const NavBar = () => {
   let history = useHistory();
+  let userName = localStorage.getItem("email").replace("@gmail.com", "");
+  console.log(userName);
   return (
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
@@ -25,7 +27,10 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <p>Welcome {localStorage.getItem("email")}</p>
+            <p>
+              Welcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
+            </p>
+
             <button
               onClick={() => {
                 Auth.logout();
