@@ -10,6 +10,7 @@ const signUp = () => {
   const [password, setPassword] = useState("");
 
   const onAddUser = async (newUser) => {
+
     axios
       .post("/api/signUp", newUser)
       .then((response) => console.log(response));
@@ -18,6 +19,7 @@ const signUp = () => {
     //   headers: {"content-type": "application/json"},
     //   body: JSON.stringify(newUser),
     // }).then((response) => console.log(response));
+
   };
 
   const submitHandler = (e) => {
@@ -82,6 +84,12 @@ const signUp = () => {
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
+
+      <p onClick={() => history.push('/')}>
+        Cancel 
+      </p>
+
+
     </div>
   );
 };

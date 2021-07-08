@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import {useEffect, useState} from 'react';
 import "./Home.css";
 import logo from "./logo.svg";
 import Feature from "./particles";
@@ -10,12 +11,14 @@ import Auth from "../utility/Auth";
 export function Home() {
   const [latestQuestions, setLatestQuestions] = useState([]);
 
+
   useEffect(async () => {
     try {
       const res = await fetch("/api/questions");
       const data = await res.json();
       setLatestQuestions(data);
       console.log(data);
+
       console.log(latestQuestions);
     } catch (error) {
       console.log(error);

@@ -42,12 +42,14 @@ const Login = () => {
 
         <input
           required
+          autoComplete="off"
           type="text"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           required
+          autoComplete="off"
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -59,6 +61,9 @@ const Login = () => {
 
       <p>
         Don't have an account?<Link to="/SignUp">Sign Up</Link>
+      </p>
+      <p onClick={() => history.push('/')}>
+        Cancel 
       </p>
     </div>
   );
