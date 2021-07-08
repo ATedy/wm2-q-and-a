@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import "./Home.css";
 import logo from "./logo.svg";
@@ -6,8 +7,20 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Auth from "../utility/Auth";
 
-
 export function Home() {
+  const [latestQuestions, setLatestQuestions] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const res = await fetch("/api/questions");
+      const data = await res.json();
+      setLatestQuestions(data);
+      console.log(data);
+      console.log(latestQuestions);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
   return (
     <div className="wrapper">
       <NavBar />
@@ -55,7 +68,7 @@ export function Home() {
           <h3>Latest questions</h3>
           <ul className="list-group">
             <li className="list-group-item list-group-item-action">
-              Question-1
+             {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
               Question-2
