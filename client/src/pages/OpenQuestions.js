@@ -3,8 +3,7 @@ import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
-
-
+import Auth from "../utility/Auth";
 
 const OpenQuestions = () => {
   const [questions, setQuestions] = useState([]);
@@ -43,7 +42,9 @@ const OpenQuestions = () => {
               <br></br>
               <span className="answerBody"> 
                {parse(question.body)}</span>
-              <Link to={`/AnswerForm/${question.id}`}>
+              <Link to={`/AnswerForm/${question.id}`}> </Link>
+              <br></br>
+              <Link to={Auth.isAuthorized() ? `/AnswerForm/${question.id}`: "/Login"}>
               <button className="btn" type="submit">
                 Answer!
               </button>

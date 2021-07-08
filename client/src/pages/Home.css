@@ -1,7 +1,8 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .logo {
   width: 100px;
@@ -15,7 +16,6 @@ position: relative;
 min-height: fit-content;
 }
 .abody{
-  /* c6d7d8 */
  background-color: rgb(23, 35, 65);
   color: #f9fcf8;
  padding: 30px;
@@ -26,41 +26,38 @@ width:80%;
 margin-left: 5rem;
 }
 #root > main {
-  z-index:100;
+  z-index: 100;
 }
-#tsparticles{
-position: fixed;
-left: 0;
-top: 0;
-z-index: 1;
-height: 100%;
-width: 100%;
+#tsparticles {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
-.questTitle
-{
-  display:block;
- font: italic small-caps bold 16px/2 fantasy;
-font-weight: 1100;
-text-align:center;
-width:1000px;
-color: #264143
+.questTitle {
+  display: block;
+  font: italic small-caps bold 16px/2 fantasy;
+  font-weight: 1100;
+  text-align: center;
+  width: 1000px;
+  color: #264143;
 }
-.list-group-item, list-group-item-action{
+.list-group-item, list-group-item-action {
   background-color: #264143;
-  color:white;
+  color: white;
   border: 2px solid white;
 }
-p, h1, h3, h6{
+p,
+h1,
+h3,
+h6 {
   text-align: center;
 }
-/* .thanksTitle{
-  text-align: center;
-   z-index:100;
-   background-color: white;
-} */
 body {
   font-family: sans-serif;
-  background-color: #EDDDD1;
+  background-color: #edddd1;
 }
 .sectionContainer {
   margin: 2em auto;
@@ -75,61 +72,63 @@ body {
    background-color: #E99F4C;
    color: black;
   padding: 50px;
+
   width: 80%;
   margin: 2em auto;
-   z-index:100;
+  z-index: 100;
 }
-.answeredSectionContainer button{
- width: 25%;
+.answeredSectionContainer button {
+  width: 25%;
   border-radius: 3px;
   background-color: #264143;
   color: white;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 .sectionContainer button {
   width: 25%;
   border-radius: 3px;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 section button {
   color: black;
   border: none;
   cursor: pointer;
   border: 2px solid white;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 .btn-center {
   text-align: center;
   margin-inline: 20rem;
 }
-section:nth-child(1){
-  color: ;
-   z-index:100;
+section:nth-child(1) {
+  background-color: #e99f4c;
+  color: #f2ebe9;
+  z-index: 100;
 }
 section:nth-child(1) button {
-   color: #f2ebe9;
-    background-color: #264143;
-     position: relative;
-  z-index:100;
-  }
+  color: #f2ebe9;
+  background-color: #264143;
+  position: relative;
+  z-index: 100;
+}
 section:nth-child(2) {
   background-color: #264143;
   color: #f2ebe9;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 section:nth-child(2) button {
-   color: #1e2531;
-    background-color: #f2ebe9;
-     position: relative;
-  z-index:100;
-  }
-  ul li{
-    cursor: pointer;
-  }
+  color: #1e2531;
+  background-color: #f2ebe9;
+  position: relative;
+  z-index: 100;
+}
+ul li {
+  cursor: pointer;
+}
 .loginContainer,
 .signUpContainer {
   width: 30%;
@@ -137,42 +136,44 @@ section:nth-child(2) button {
   margin: 7% auto;
   padding: 1em;
   border: 1px solid black;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 .loginForm,
 .signUpForm {
   display: flex;
   flex-direction: column;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
-form input, form button {
+form input,
+form button {
   height: 2em;
   margin: 0.5em;
   border-radius: 3px;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
   padding: 1.5rem;
   border: 3px solid #264143;
   color: black;
 }
 .questionForm,
-.answerForm{
-   display: flex;
+.answerForm {
+  display: flex;
   flex-direction: column;
   margin-left: 5rem;
   margin-right: 5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   color: gray;
-  background-color:white;
+  background-color: white;
   border: 3px solid #f2ebe9;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
   padding: 10px;
   max-width: 1200px;
 }
+
 .btn{
     display:inline-block;
     text-align: center;
@@ -206,10 +207,12 @@ form input, form button {
 section:nth-child(1) button:hover {
   background-color: #f2ebe9;
   color:black; 
+
 }
 section:nth-child(3) button:hover {
   background-color: #f2ebe9;
   color:black; 
+
 
 }
 section:nth-child(2) button:hover{
@@ -228,13 +231,13 @@ section:nth-child(2) button:hover{
   margin: 2% auto;
   width: 100%;
   padding: 30px;
-  list-style-type:none;
+  list-style-type: none;
   position: flex;
   justify-content: space-evenly;
    position: relative;
   z-index:100;
 }
-.what{
+.what {
   background-color: #f2ebe9;
   color: black;
  padding: 30px;
@@ -246,32 +249,37 @@ margin-left: 5rem;
 }
 .openQTitle{
   text-align: center;
-  font:  bold 16px/2 fantasy;
+  font: bold 16px/2 fantasy;
   font-size: 55px;
-    position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
   background-color: #f2ebe9;
   color: black;
 }
+
 header{
   background-color:lightcyan;
 }
 .list-footer{
   width: 100%;
-  height:6rem;
+  height: 6rem;
   background-color: #264143;
-position: absolute;
-margin: 0;
-padding: 0;
+  color: aliceblue;
+  position: absolute;
+  margin: 0;
+  padding: 0;
 }
-.list{
+.list-footer p{
+  color: aliceblue;
+}
+.list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   place-items: center;
   margin: auto;
   width: 100%;
 }
-.list li{
+.list li {
   list-style-type: none;
   color: White;
   margin-top: 1em;
@@ -281,7 +289,7 @@ padding: 0;
   color: white;
   margin-top: 2em ;
 }
-.ui icon-input{
+.ui icon-input {
   flex-direction: column;
   padding-left: 100px;
   border-radius: 10px;
@@ -295,29 +303,30 @@ width: 100%;
   position: sticky;
   z-index: 500;
   top: 0;
-  background-color:#264143;
+  background-color: #264143;
   margin-bottom: 3em;
   @media (min-width: 750px) {
 
   }
 }
-.navBar p, .navLinks {
-  color: white;
+.navBar p,
+.navLinks {
+  color: aliceblue;
 }
-.navLinks{
+.navLinks {
   margin-top: 0.3em;
 }
-.navBar p{
+.navBar p {
   font-weight: 400;
   font-size: 1.4em;
 }
-.search{
+.search {
   display: grid;
 grid-template-columns: 1fr 1fr;
 place-items: start;
 margin: 1em 0 0 2em;
 }
-.login{
+.login {
   margin-right: 2em;
 }
 .search-bar{
@@ -328,16 +337,16 @@ margin-left: -3em;
   margin: 0.5em;
   padding: 1.5rem;
 }
-.question-form-header{
+.question-form-header {
   background-color: lightgray;
 }
-.input-label{
+.input-label {
   text-align: left;
   margin-left: 0.5em;
   margin-bottom: 0;
   margin-top: 1em;
 }
-.button-form{
+.button-form {
   display: flex;
   flex-direction: row;
   background-color: lightgray;

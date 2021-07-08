@@ -1,7 +1,7 @@
 import {useHistory} from "react-router-dom";
 import React, {useState} from "react";
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import {CKEditor} from "@ckeditor/ckeditor5-react";
 
 
 const QuestionsForm = (props) => {
@@ -9,7 +9,6 @@ const QuestionsForm = (props) => {
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState("");
   const [data, setData] = useState("");
-
 
   const handleTitle = (event) => {
     const {value} = event.target;
@@ -20,20 +19,19 @@ const QuestionsForm = (props) => {
     setTags(value);
   };
 
-const handleData = (event, editor) => {
-  console.log(event)
-  console.log(editor)
-  console.log(editor.getData())
+  const handleData = (event, editor) => {
+    console.log(event);
+    console.log(editor);
+    console.log(editor.getData());
 
-  const value = editor.getData();
+    const value = editor.getData();
 
-  setData(value)
-
-};
+    setData(value);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(data)
+    console.log(data);
     const newQuestion = {title, body: data, tags};
     const res = await fetch("/api/questions", {
       method: "POST",
@@ -58,7 +56,7 @@ const handleData = (event, editor) => {
         <h3>Body</h3>
         <h6>
           Include all the information someone needs to answer your question.
-          What is the problem and what you have tried to resolve it.{' '}
+          What is the problem and what you have tried to resolve it.{" "}
         </h6>
         <div className="form">
           <CKEditor
@@ -78,18 +76,14 @@ const handleData = (event, editor) => {
           onChange={handleTags}
         />
       </form>
-     <div className="button-form">
-          <button className="btn" type="submit" onClick={handleSubmit}>
-            Ask!
-          </button>
-          <button
-            className="btn"
-            type="submit"
-            onClick={() => history.push("/")}
-          >
-            Cancel
-          </button>
-        </div>
+      <div className="button-form">
+        <button className="btn" type="submit" onClick={handleSubmit}>
+          Ask!
+        </button>
+        <button className="btn" type="submit" onClick={() => history.push("/")}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 };
