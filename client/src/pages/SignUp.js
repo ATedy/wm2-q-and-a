@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
+import axios from "axios";
 
 const signUp = () => {
   let history = useHistory();
@@ -9,27 +10,31 @@ const signUp = () => {
   const [password, setPassword] = useState("");
 
   const onAddUser = async (newUser) => {
-    fetch("/api/signUp", {
-      method: "POST",
-      headers: {"content-type": "application/json"},
-      body: JSON.stringify(newUser),
-    }).then((response) => console.log(response));
+
+    axios
+      .post("/api/signUp", newUser)
+      .then((response) => console.log(response));
+    // fetch("/api/signUp", {
+    //   method: "POST",
+    //   headers: {"content-type": "application/json"},
+    //   body: JSON.stringify(newUser),
+    // }).then((response) => console.log(response));
+
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(!name || !email || !password){
-      alert('Please enter fill all the required fields')
+    if (!name || !email || !password) {
+      alert("Please enter fill all the required fields");
       history.push("/signUp");
     } else {
       if (name.length < 3) {
         history.push("/signUp");
-        alert('Please username is too short');
+        alert("Please username is too short");
 
         setEmail("");
       } else if (password.length < 6) {
-
-        alert('Please password is too short');
+        alert("Please password is too short");
         setEmail("");
         history.push("/signUp");
       } else {
@@ -41,8 +46,6 @@ const signUp = () => {
         setPassword("");
       }
     }
-    
-   
   };
 
   return (
@@ -58,37 +61,37 @@ const signUp = () => {
           Join the community to Ask and Answer questions from fellow developers
         </p>
         <input
-         required
+          required
           type="text"
           placeholder="Username"
           onChange={(e) => setName(e.target.value)}
         />
         <input
-        required
+          required
           type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-        required
+          required
           type="Password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        
+
         <button type="submit">Sign Up</button>
       </form>
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>
+
       <p onClick={() => history.push('/')}>
         Cancel 
       </p>
 
+
     </div>
   );
 };
-
-
 
 export default signUp;

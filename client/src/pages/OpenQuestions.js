@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
+import Auth from "../utility/Auth";
+
 
 
 const OpenQuestions = () => {
@@ -39,9 +41,11 @@ const OpenQuestions = () => {
                 Question Title: {question.title}{' '}
               </span>
               <br></br>
-              <span className="answerBody"> Body: {question.body}</span>
+               {/* <EditorPreview data={question.body} />  */}
+              <span className="answerBody"> 
+              Body: {question.body}</span>
               <br></br>
-              <Link to="/AnswerForm">
+              <Link to={Auth.isAuthorized() ? `/AnswerForm/${question.id}`: "/Login"}>
               <button className="btn" type="submit">
                 Answer!
               </button>

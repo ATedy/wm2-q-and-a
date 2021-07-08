@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 import Auth from "../utility/Auth";
@@ -16,7 +16,6 @@ const Login = () => {
         Auth.setToken(response.data.token);
         localStorage.setItem("email", response.data.email);
         history.push("/");
-        console.log(response);
       })
       .catch((error) => {
         setError("Login not Successful");

@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/OpenQuestions">
           <OpenQuestions />
         </Route>
-        <Route path="/AnswerForm">
+        <Route path="/AnswerForm/:questionId">
           <AnswerForm />
         </Route>
 

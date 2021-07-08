@@ -7,12 +7,34 @@
   width: 100px;
 }
 main{
-  margin: 2rem;
+  /* margin: 10rem; */
 }
+
 .wrapper{
-  position: relative;
+position: relative;
   z-index:100;
+   margin:0;
+  padding:0;
+  /* min-width: fit-content; */
+  width: 100%;
+min-height: fit-content;
+
+
 }
+/* @media (min-width:400px){
+  .wrapper{
+    position: relative;
+    z-index:100;
+     margin:0;
+    padding:0;
+    min-width: fit-content;
+    width: 100%;
+
+
+  }
+
+  } */
+
 #root > main {
   z-index:100;
 }
@@ -24,38 +46,30 @@ z-index: 1;
 height: 100%;
 width: 100%;
 }
+/* .navBar{
+    margin: 0 auto;
 
-.navBar{
-  margin: 0 auto;
-  width: 100%;
-  padding: 0.1%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid gray;
-  background-color: #264143;
-  border: 5px solid white;
-  z-index:500;
-  position: fixed;
-  top: 0;
-}
-
-.navBar p{
-  font-weight: 400;
-  font-size: 1.4em;
-}
-
-.navBar p, .navLinks {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    background-color:#264143;
+    border: 2px solid white;
+    z-index:500;
+    position: fixed;
+    top: 0;
+} */
+/* .navBar p, .navLinks {
     color: white;
 }
-.navBar .logoName{
-  margin-top: 0.5em;
-  padding-left: 0.2em;
+.navLinks{
+    margin-top: 0.2em;
 }
-
-main{
-  margin-top: 6em;
-}
+.navBar p{
+    font-weight: 800;
+    font-size: 5em;
+} */
 
 .questTitle
 {
@@ -73,27 +87,28 @@ color: #264143
 }
 p, h1, h3, h6{
   text-align: center;
-  position: relative;
-  z-index:100;
 }
 body {
   font-family: sans-serif;
   background-color: #EDDDD1;
 }
 .sectionContainer {
-  margin: 2% auto;
-  width: 100%;
+  margin: 2em auto;
+  width: 80%;
   background-color: #E99F4C;
   padding: 10px;
   border: 2px solid #FFEEDB;
   color: white;
-   position: relative;
+   /* position: relative; */
   z-index:100;
 }
 .answeredSectionContainer{
    background-color: #E99F4C;
    color: white;
   padding: 2%;
+  width: 80%;
+  margin: 2em auto;
+   z-index:100;
 }
 .answeredSectionContainer button{
  width: 25%;
@@ -110,7 +125,6 @@ body {
   z-index:100;
 }
 section button {
-  
   color: black;
   border: none;
   cursor: pointer;
@@ -119,12 +133,13 @@ section button {
   z-index:100;
 }
 .btn-center {
-  display:block;
-  margin: 0 auto;
+  text-align: center;
+  margin-inline: 20rem;
 }
 section:nth-child(1){
   background-color: #e99f4c;
   color: #f2ebe9;
+   z-index:100;
 }
 section:nth-child(1) button {
    color: #f2ebe9;
@@ -170,6 +185,9 @@ form input, form button {
   border-radius: 3px;
    position: relative;
   z-index:100;
+  padding: 1.5rem;
+  border: 3px solid #264143;
+  color: black;
 }
 .questionForm,
 .answerForm{
@@ -179,11 +197,13 @@ form input, form button {
   margin-right: 5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  color: #f2ebe9;
-  background-color: #264143;
+  color: gray;
+  background-color:white;
   border: 3px solid #f2ebe9;
    position: relative;
   z-index:100;
+  padding: 10px;
+  max-width: 1200px;
 }
 .btn{
     display:inline-block;
@@ -192,7 +212,7 @@ form input, form button {
     background-color:#e99f4c;
     border: 3px solid #f2ebe9;
     color:black;
-    margin-left: 5rem; 
+    margin-left: 5rem;
     margin-inline: 10rem;
     position: relative;
   z-index:100;
@@ -205,34 +225,32 @@ form input, form button {
   z-index:100;
 }
 
-
-
 .things{
   margin: 2% auto;
   width: 100%;
-  padding: 1em;
-  /* list-style-type:none; */
+  padding: 30px;
+  list-style-type:none;
   position: flex;
   justify-content: space-evenly;
+  /* text-align:center; */
+   /* flex-basis: auto; */
+  /* flex-wrap: nowrap; */
    position: relative;
   z-index:100;
-}
-.thanksTitle{
-    z-index:100;
-    color:black;
-    background-color: #f2ebe9;
 }
 .what{
   background-color: #f2ebe9;
   color: black;
- text-align: center;
- padding: 0.5em;
-border: 3px solid black;
- margin: 10px auto;
- z-index:100;
+ /* justify-content: space-between; */
+ padding: 30px;
+ /* border-bottom: 50px; */
+ /* flex-direction: column; */
+ border: 3px solid black;
+ margin: 30px;
+  /* position: relative; */
+  z-index:100;
 width:80%;
-margin-left: 5rem; 
-list-style-type:none;
+margin-left: 5rem;
 }
 
 .openQTitle{
@@ -241,9 +259,8 @@ list-style-type:none;
   font-size: 55px;
     position: relative;
   z-index:100;
-  color: black;
   background-color: #f2ebe9;
-  color:black;
+  color: black;
 }
 logo-image{
   color:lightcoral;
@@ -255,39 +272,10 @@ header{
 }
 
 /* footer sec */
-/* 
-.footer-section{
-  flex-direction: column-reverse;
-  background-color: lightgrey;
-  background-color: #264143;
-  padding: 1.5%;
-  border-radius: 2px;
-}
-.list-footer{
-  position: relative;
-  justify-content: space-between;
-}
-.list{
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: space-evenly;
-  align-content: flex-start;
-}
-.list li{
-  list-style-type: none;
-}
-.ui icon-input{
-  flex-direction: column;
-  padding-left: 100px;
-  border-radius: 10px;
-} */
-
-/* new */
 
 .list-footer{
   width: 100%;
-  height: 7rem;
+  height:6rem;
   background-color: #264143;
 position: absolute;
 margin: 0;
@@ -300,6 +288,7 @@ padding: 0;
   place-items: center;
   margin: auto;
   width: 100%;
+  /* height: 100%; */
 
 
 }
@@ -307,14 +296,83 @@ padding: 0;
   list-style-type: none;
   color: red;
   margin-top: 1em;
+  height: 100%;
 
 }
 .copyright{
   color: red;
   margin-top: 2em ;
 }
+.ui icon-input{
+  flex-direction: column;
+  padding-left: 100px;
+  border-radius: 10px;
+}
+
+.navBar{
+width: 100%;
+  /* height: 5%; */
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  position: sticky;
+  z-index: 500;
+  top: 0;
+  background-color:#264143;
+  margin-bottom: 3em;
+  @media (min-width: 750px) {
+
+  }
+
+}
+.navBar p, .navLinks {
+  color: #FB454E;
+}
+.navLinks{
+  margin-top: 0.3em;
+}
+.navBar p{
+  font-weight: 400;
+  font-size: 1.4em;
+}
+.search{
+  display: grid;
+  /* width: 100%; */
+grid-template-columns: 1fr 1fr;
+place-items: start;
+margin: 1em 0 0 2em;
+
+}
+.login{
+  margin-right: 2em;
+}
+.search-bar{
+/* display: flex; */
+margin-left: -3em;
 
 
+}
 
+.textarea-style{
+  border:  3px solid #264143;
+  margin: 0.5em;
+  padding: 1.5rem;
+
+}
+.question-form-header{
+  background-color: lightgray;
+}
+.input-label{
+  text-align: left;
+  margin-left: 0.5em;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+.button-form{
+  display: flex;
+  flex-direction: row;
+  background-color: lightgray;
+}
 
 

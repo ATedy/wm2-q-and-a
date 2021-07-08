@@ -1,3 +1,4 @@
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from 'react';
 import "./Home.css";
@@ -9,13 +10,15 @@ import Auth from "../utility/Auth";
 
 export function Home() {
   const [latestQuestions, setLatestQuestions] = useState([]);
-      // let history = useHistory();
-  
+
+
   useEffect(async () => {
     try {
-      const res = await fetch('/api/questions');
+      const res = await fetch("/api/questions");
       const data = await res.json();
-      setLatestQuestions(...data);
+      setLatestQuestions(data);
+      console.log(data);
+
       console.log(latestQuestions);
     } catch (error) {
       console.log(error);
@@ -68,7 +71,7 @@ export function Home() {
           <h3>Latest questions</h3>
           <ul className="list-group">
             <li className="list-group-item list-group-item-action">
-              Question-1
+             {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
               Question-2
