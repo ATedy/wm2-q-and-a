@@ -63,7 +63,7 @@ body {
   margin: 2em auto;
   width: 80%;
   background-color: #E99F4C;
-    color: black;
+  color: black;
   padding: 50px;
   border: 2px solid #FFEEDB;
   z-index:100;
@@ -105,7 +105,6 @@ section button {
 }
 section:nth-child(1) {
   background-color: #e99f4c;
-  color: #f2ebe9;
   z-index: 100;
 }
 section:nth-child(1) button {
