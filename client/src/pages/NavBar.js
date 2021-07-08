@@ -1,10 +1,11 @@
-import React from "react";
-import {Link, useHistory} from "react-router-dom";
-import Auth from "../utility/Auth";
+import React from 'react';
+import {Link, useHistory} from 'react-router-dom';
+import Auth from '../utility/Auth';
 
 const NavBar = () => {
   let history = useHistory();
-  let userName = localStorage.getItem("email").replace("@gmail.com", "");
+  let userName = localStorage.getItem('email');
+  //.replace('@gmail.com', 'hi');
   console.log(userName);
   return (
     <nav className="navBar">
@@ -17,7 +18,7 @@ const NavBar = () => {
       <div>
         {!Auth.isAuthorized() ? (
           <>
-            {" "}
+            {' '}
             <Link className="mr-3 navLinks" to="/SignUp">
               Sign Up
             </Link>
@@ -30,14 +31,13 @@ const NavBar = () => {
             <p>
               Welcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
             </p>
-
             <button
               onClick={() => {
                 Auth.logout();
-                history.push("/");
+                history.push('/');
               }}
             >
-              Log Out{" "}
+              Log Out{' '}
             </button>
           </>
         )}
@@ -45,5 +45,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;
