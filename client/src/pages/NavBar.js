@@ -4,8 +4,7 @@ import Auth from '../utility/Auth';
 
 const NavBar = () => {
   let history = useHistory();
-  let userName = localStorage.getItem('email');
-  //.replace('@gmail.com', 'hi');
+  let userName = localStorage.getItem('email').replace('@gmail.com', 'hi');
   console.log(userName);
   return (
     <nav className="navBar">
