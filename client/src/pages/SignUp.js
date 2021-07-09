@@ -8,6 +8,11 @@ const signUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emptyFields, setEmptyFields] = useState(false);
+  const [shortName, setShortName] = useState(false);
+  const [shortPassword, setShortPassword] = useState(false);
+
+
 
   const onAddUser = async (newUser) => {
 
@@ -19,16 +24,16 @@ const signUp = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (!name || !email || !password) {
-      alert("Please enter fill all the required fields");
+      setEmptyFields(true);
       history.push("/signUp");
     } else {
       if (name.length < 3) {
+        setShortName(true);
         history.push("/signUp");
-        alert("Please username is too short");
 
         setEmail("");
       } else if (password.length < 6) {
-        alert("Please password is too short");
+        setShortPassword(true);
         setEmail("");
         history.push("/signUp");
       } else {
@@ -54,6 +59,7 @@ const signUp = () => {
         <p>
           Join the community to Ask and Answer questions from fellow developers
         </p>
+        <p className="errorMsg">{shortName ? "User name should be more 3 characters": null}</p>
         <input
           required
           type="text"
@@ -72,6 +78,7 @@ const signUp = () => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <p className="errorMsg">{shortPassword ? "Password should be more 6 characters": null}</p>
         <button className="submitBtn" type="submit">Sign Up</button>
       </form>
       <p>

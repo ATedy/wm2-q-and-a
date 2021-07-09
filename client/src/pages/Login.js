@@ -18,7 +18,7 @@ const Login = () => {
         history.push("/");
       })
       .catch((error) => {
-        setError("Login not Successful");
+        setError("Login not Successful, check your password/email again or register as a new users please.");
         console.log(error);
       });
   };
@@ -54,7 +54,7 @@ const Login = () => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        {error ? <p>{error}</p> : null}
+        {error ? <p className="errorMsg">{error}</p> : null}
 
         <button type="submit">Log in</button>
       </form>
