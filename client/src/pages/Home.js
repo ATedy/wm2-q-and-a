@@ -12,16 +12,27 @@ export function Home() {
 
   useEffect(async () => {
     try {
-      const res = await fetch("/api/questions");
+      const res = await fetch('/api/questions');
       const data = await res.json();
-      setLatestQuestions(data);
       console.log(data);
-
-      console.log(latestQuestions);
+      console.log(data.length);
+      if (data.length < 5) {
+        setLatestQuestions(data);
+        console.log(data);
+      } else {
+        let i = 0;
+        const latestArr = [];
+        while (i < 4) {
+     latestArr.concat(data[data.length - i])
+     i = i+1;
+        }
+        setLatestQuestions(latestArr);
+      }
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, []); 
+
   return (
     <div className="wrapper">
       <NavBar />
@@ -35,7 +46,7 @@ export function Home() {
           <p>All you need to do is ask</p>
           <Link
             className="questionLinks"
-            to={Auth.isAuthorized() ? "/QuestionsForm" : "/Login"}
+            to={Auth.isAuthorized() ? '/QuestionsForm' : '/Login'}
           >
             <button className="btn-center">Ask Question</button>
           </Link>
@@ -60,7 +71,7 @@ export function Home() {
           <p>Have a look through all the answers</p>
           <Link
             className="questionLinks"
-            to={Auth.isAuthorized() ? "/Answers" : "/Login"}
+            to={Auth.isAuthorized() ? '/Answers' : '/Login'}
           >
             <button className="btn-center">All Answers</button>
           </Link>
@@ -72,13 +83,13 @@ export function Home() {
               {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
-              Question-2
+              {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
-              Question-3
+              {latestQuestions.length}
             </li>
             <li className="list-group-item list-group-item-action">
-              Question-4
+              {latestQuestions.length}
             </li>
           </ul>
         </section>

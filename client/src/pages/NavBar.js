@@ -12,13 +12,7 @@ const NavBar = () => {
       <p className="logoName">Q U E S T</p>
       <div>
       <Search />
-        {/* <input
-          id="livesearch"
-          type="text"
-          placeholder="Search.."
-          className="prompt"
-        /> */}
-        <button type="submit">Search</button>
+        <button type="submit" onClick={() => history.push('/answers')}>Search</button>
         <i className="search icon"></i>
       </div>
       <div>

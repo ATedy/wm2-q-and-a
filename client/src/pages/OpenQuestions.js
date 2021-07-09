@@ -1,15 +1,18 @@
-import {useEffect, useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import React from 'react';
-import { Link } from "react-router-dom";
-// import parse from "html-react-parser";
+import {useHistory, Link} from 'react-router-dom';
+import React, {useContext,useEffect, useState} from 'react';
+import parse from "html-react-parser";
 import Auth from "../utility/Auth";
 import Editor from './Editor';
+import ImgurUploaderInit from 'ckeditor5-imgur-uploader';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {CKEditor} from '@ckeditor/ckeditor5-react';
+import {SearchResultContext} from "../context/SearchResultContext";
 
 
 const OpenQuestions = () => {
-
- //const ImgurUploader = ImgurUploaderInit({clientID: 'b1bdfd84072fbe7'});
+const test = useContext(SearchResultContext);
+console.log({test})
+ const ImgurUploader = ImgurUploaderInit({clientID: 'b1bdfd84072fbe7'});
 
   const [questions, setQuestions] = useState([]);
       let history = useHistory();
@@ -41,11 +44,11 @@ const OpenQuestions = () => {
         return (
           <li key={index}>
             <div className="what">
-              <span className="answerTitle">Question: {question.title} </span>
+              <span className="answerTitle">Question: <br></br> {question.title} </span>
               <br></br>
               {console.log(question.body)}
               <span className="answerBody">
-                <Editor readOnly={true} data={question.body} extraPlugin={[ImgurUploader]} />
+                {/* <Editor readOnly={true} data={question.body} extraPlugin={[ImgurUploader]} /> */}
                 {/* <CKEditor
                   editor={ClassicEditor}
                   data={question.body}
@@ -54,7 +57,8 @@ const OpenQuestions = () => {
                     readOnly: true,
                   }}
                 /> */}
-                {/* {parse(question.body)} */}
+                {parse(question.body)}
+                {parse(question.tags)}
               </span>
               <Link to={`/AnswerForm/${question.id}`}> </Link>
               <br></br>
