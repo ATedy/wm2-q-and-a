@@ -1,23 +1,36 @@
-
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import "./Home.css";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Auth from "../utility/Auth";
-
+import parse from "html-react-parser";
+import moment from "moment";
 
 export function Home() {
+  let history = useHistory();
   const [latestQuestions, setLatestQuestions] = useState([]);
+  // const [filteredQuestions, setFilteredQuestions] = useState([]);
 
   useEffect(async () => {
     try {
       const res = await fetch("/api/questions");
       const data = await res.json();
-      setLatestQuestions(data);
       console.log(data);
-
-      console.log(latestQuestions);
+      console.log(data.length);
+      if (data.length < 5) {
+        setLatestQuestions(data);
+        console.log(data);
+      } else {
+        let i = 0;
+        const latestArr = [];
+        while (i < 4) {
+          latestArr.push(data[data.length - 1 - i]);
+          i = i + 1;
+        }
+        console.log(latestArr);
+        setLatestQuestions(latestArr);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -68,18 +81,20 @@ export function Home() {
         <section className="sectionContainer">
           <h3>Latest questions</h3>
           <ul className="list-group">
-            <li className="list-group-item list-group-item-action">
-              {latestQuestions.length}
-            </li>
-            <li className="list-group-item list-group-item-action">
-              Question-2
-            </li>
-            <li className="list-group-item list-group-item-action">
-              Question-3
-            </li>
-            <li className="list-group-item list-group-item-action">
-              Question-4
-            </li>
+            {latestQuestions.map((question, index) => (
+              <li
+                onClick={() => {
+                  Auth.isAuthorized()
+                    ? history.push("/OpenQuestions")
+                    : history.push("/Login");
+                }}
+                key={index}
+                className="list-group-item list-group-item-action"
+              >
+                {parse(question.body)}
+                <span>{question.created_at.slice(0, 10)}</span>
+              </li>
+            ))}
           </ul>
         </section>
       </main>
@@ -87,5 +102,4 @@ export function Home() {
     </div>
   );
 }
-
 export default Home;
