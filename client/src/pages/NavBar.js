@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link, useHistory} from 'react-router-dom';
-import Auth from '../utility/Auth';
-import Search from './Search';
+import React from "react";
+import {Link, useHistory} from "react-router-dom";
+import Auth from "../utility/Auth";
+import Search from "./Search";
 
 const NavBar = () => {
   let history = useHistory();
@@ -12,7 +12,14 @@ const NavBar = () => {
       <p className="logoName">Q U E S T</p>
       <div className="searchContainer">
         <Search />
-        <button type="submit" onClick={() => history.push('/SearchAnswers')}>
+        <button
+          type="submit"
+          onClick={() => {
+            Auth.isAuthorized()
+              ? history.push("/SearchAnswers")
+              : history.push("/Login");
+          }}
+        >
           Search
         </button>
         <i className="search icon"></i>
@@ -20,7 +27,7 @@ const NavBar = () => {
       <div>
         {!Auth.isAuthorized() ? (
           <>
-            {' '}
+            {" "}
             <Link className="mr-3 navLinks" to="/SignUp">
               Sign Up
             </Link>
@@ -32,17 +39,15 @@ const NavBar = () => {
           <>
             <p>
               Welcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
-
             </p>
             <button
-            className="btnLogOut"
+              className="btnLogOut"
               onClick={() => {
                 Auth.logout();
-                history.push('/');
+                history.push("/");
               }}
             >
-              Log Out{' '}
-              
+              Log Out{" "}
             </button>
           </>
         )}
