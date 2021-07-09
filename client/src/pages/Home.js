@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Auth from "../utility/Auth";
 import parse from "html-react-parser";
-import moment from "moment";
 
 export function Home() {
   let history = useHistory();
@@ -87,7 +86,7 @@ export function Home() {
                 key={index}
                 className="list-group-item list-group-item-action"
               >
-                {parse(question.body)}
+                {parse(question.title)}
                 <span>{question.created_at.slice(0, 10)}</span>
               </li>
             ))}
