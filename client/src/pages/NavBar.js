@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import Auth from '../utility/Auth';
+import Search from './Search';
 
 const NavBar = () => {
   let history = useHistory();
@@ -10,7 +11,13 @@ const NavBar = () => {
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
       <div>
-        <input type="text" placeholder="Search.." className="prompt" />
+      <Search />
+        {/* <input
+          id="livesearch"
+          type="text"
+          placeholder="Search.."
+          className="prompt"
+        /> */}
         <button type="submit">Search</button>
         <i className="search icon"></i>
       </div>

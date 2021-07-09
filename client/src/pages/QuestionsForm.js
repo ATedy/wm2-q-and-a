@@ -2,9 +2,13 @@ import {useHistory} from "react-router-dom";
 import React, {useState} from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import {CKEditor} from "@ckeditor/ckeditor5-react";
+import ImgurUploaderInit from 'ckeditor5-imgur-uploader';
 
 
 const QuestionsForm = (props) => {
+  const ImgurUploader = ImgurUploaderInit({
+    clientID: 'b1bdfd84072fbe7',
+  });
   let history = useHistory();
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState("");
@@ -41,6 +45,7 @@ const QuestionsForm = (props) => {
     history.push("/Thanks");
   };
 
+
   return (
     <div className="questionFormContainer">
       <form className="questionForm">
@@ -56,16 +61,16 @@ const QuestionsForm = (props) => {
         <h3>Body</h3>
         <h6>
           Include all the information someone needs to answer your question.
-          What is the problem and what you have tried to resolve it.{" "}
+          What is the problem and what you have tried to resolve it.{' '}
         </h6>
         <div className="form">
           <CKEditor
             editor={ClassicEditor}
             data={data}
-            onReady={(editor) => {
-              console.log("Type your question here", editor);
-            }}
             onChange={handleData}
+            config={{
+              extraPlugins: [ImgurUploader],
+            }}
           />
         </div>
         <h3>Tags</h3>
@@ -80,7 +85,7 @@ const QuestionsForm = (props) => {
         <button className="btn" type="submit" onClick={handleSubmit}>
           Ask!
         </button>
-        <button className="btn" type="submit" onClick={() => history.push("/")}>
+        <button className="btn" type="submit" onClick={() => history.push('/')}>
           Cancel
         </button>
       </div>
