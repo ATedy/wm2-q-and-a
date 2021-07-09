@@ -80,8 +80,8 @@ export function Home() {
               <li
                 onClick={() => {
                   Auth.isAuthorized()
-                    ? history.push("/OpenQuestions")
-                    : history.push("/Login");
+                    ? history.push(`/OpenQuestions`)
+                    : history.push('/Login');
                 }}
                 key={index}
                 className="list-group-item list-group-item-action"

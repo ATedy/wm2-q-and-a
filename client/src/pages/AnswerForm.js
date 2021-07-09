@@ -63,10 +63,14 @@ const AnswerForm = () => {
             />
           </div>
         </form>
-        <button className="btn" type="submit" onClick={handleSubmit}>
+        <button className="butn" type="submit" onClick={handleSubmit}>
           Answer!
         </button>
-        <button className="btn" type="submit" onClick={() => history.push('/')}>
+        <button
+          className="butn"
+          type="submit"
+          onClick={() => history.push('/')}
+        >
           Cancel
         </button>
       </div>
