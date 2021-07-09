@@ -11,9 +11,16 @@ import Answers from './pages/Answers';
 import Thanks from './pages/Thanks';
 import {SearchResultContext} from "./context/SearchResultContext";
 import axios from "axios";
+import SearchAnswers from './pages/SearchAnswers';
 
 const lowerCaseIncludes = (a, b) => a.toLowerCase().includes(b.toLowerCase())
-const filter = (list, query) =>  list.filter(i => lowerCaseIncludes(i.title, query) || lowerCaseIncludes(i.body, query))
+const filter = (list, query) =>
+  list.filter(
+    (i) =>
+      lowerCaseIncludes(i.title, query) ||
+      lowerCaseIncludes(i.body, query) ||
+      lowerCaseIncludes(i.tags, query)
+  );
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -26,7 +33,16 @@ const App = () => {
     }, [searchString]);
   
   return (
-    <SearchResultContext.Provider value={{questions, answers, setQuestions, setAnswers, searchString, setSearchString}}>
+    <SearchResultContext.Provider
+      value={{
+        questions,
+        answers,
+        setQuestions,
+        setAnswers,
+        searchString,
+        setSearchString,
+      }}
+    >
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -52,8 +68,11 @@ const App = () => {
         <Route path="/Thanks">
           <Thanks />
         </Route>
+        <Route path="/SearchAnswers">
+          <SearchAnswers />
+        </Route>
       </Switch>
-    </SearchResultContext.Provider >
+    </SearchResultContext.Provider>
   );
 };
 

@@ -11,8 +11,10 @@ const NavBar = () => {
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
       <div>
-      <Search />
-        <button type="submit" onClick={() => history.push('/answers')}>Search</button>
+        <Search />
+        <button type="submit" onClick={() => history.push('/SearchAnswers')}>
+          Search
+        </button>
         <i className="search icon"></i>
       </div>
       <div>
@@ -29,7 +31,8 @@ const NavBar = () => {
         ) : (
           <>
             <p>
-              Welcome {trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1)}
+              Welcome{' '}
+              {trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1)}
             </p>
             <button
               onClick={() => {
