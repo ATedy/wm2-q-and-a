@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import React from 'react';
-import {Link} from 'react-router-dom';
-import parse from 'html-react-parser';
+import {useEffect, useState} from "react";
+import {useHistory} from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
+import parse from "html-react-parser";
 
 const Answers = () => {
   let history = useHistory();
@@ -10,8 +10,8 @@ const Answers = () => {
   const [answers, setAnswers] = useState([]);
   useEffect(async () => {
     try {
-      const questions = await fetch('/api/questions');
-      const answers = await fetch('/api/answers');
+      const questions = await fetch("/api/questions");
+      const answers = await fetch("/api/answers");
       const questionsUnpacked = await questions.json();
       const answersUnpacked = await answers.json();
       setQuestions(questionsUnpacked);
@@ -27,9 +27,9 @@ const Answers = () => {
         <div>
           <h1 className="openQTitle">All Questions</h1>
           <button
-            className="homeBtn"
+            className="homeBtn btn"
             type="submit"
-            onClick={() => history.push('/')}
+            onClick={() => history.push("/")}
           >
             Home
           </button>
@@ -42,7 +42,7 @@ const Answers = () => {
               <li key={index}>
                 <div className="what">
                   <span className="answerTitle">
-                    Question: {question.title}{' '}
+                    Question: {question.title}{" "}
                   </span>
                   <br></br>
                   <span className="answerBody">{parse(question.body)}</span>
@@ -55,12 +55,12 @@ const Answers = () => {
                         return (
                           <div key={i} className="abody">
                             <span className="answerBody">
-                              {' '}
+                              {" "}
                               {answer.answer_title}
                             </span>
                             <br></br>
                             <span className="answerBody">
-                              {' '}
+                              {" "}
                               {parse(answer.answer_body)}
                             </span>
                           </div>

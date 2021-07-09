@@ -105,6 +105,10 @@ section button {
   margin-right: 10%;
   /* Here */
 }
+section .btn {
+  margin: 0 auto;
+  text-align: center;
+}
 
 section:nth-child(1) {
   z-index: 100;
@@ -113,18 +117,16 @@ section:nth-child(1) button {
   display: inline-block;
   color: #f2ebe9;
   background-color: #264143;
-  justify-content: center ;
+  justify-content: center;
   margin-left: 37%;
   z-index: 100;
-
 }
 section:nth-child(3) button {
   color: #f2ebe9;
   background-color: #264143;
-  justify-content: center ;
+  justify-content: center;
   margin-left: 37%;
   z-index: 100;
-
 }
 section:nth-child(2) {
   background-color: #264143;
@@ -135,7 +137,7 @@ section:nth-child(2) {
 section:nth-child(2) button {
   color: #1e2531;
   background-color: #f2ebe9;
-   margin-left: 37%;
+  margin-left: 37%;
   z-index: 100;
 }
 
@@ -153,6 +155,18 @@ ul li {
   position: relative;
   z-index: 100;
 }
+.btnLogOut {
+  cursor: pointer;
+  background-color: #264143;
+  color: #f2ebe9;
+  border-style: none;
+  margin-right: 1em;
+  width: 100px;
+  float: right;
+}
+.btnlogOut:hover {
+  background-color: blue;
+}
 .loginForm,
 .signUpForm {
   display: flex;
@@ -162,14 +176,18 @@ ul li {
 }
 form input,
 form button {
-  height: 2em;
+  /* height: 2em; */
   margin: 0.5em;
   border-radius: 3px;
   position: relative;
   z-index: 100;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 3px solid #264143;
   color: black;
+}
+.searchContainer button{
+  margin-left: 0.1em;
+  margin-top: 0.3em;
 }
 .questionForm,
 .answerForm {
@@ -187,17 +205,16 @@ form button {
   padding: 10px;
   max-width: 1200px;
 }
-.answerBtns{
- display: flex;
- width: 70%;
- justify-content: center;
- padding: 2rem;
-   
+.answerBtns {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  padding: 2rem;
 }
 
-.butn{
- padding: 0.5rem;
- width: 200%;
+.butn {
+  padding: 0.5rem;
+  width: 200%;
 }
 
 .btn {
@@ -211,14 +228,13 @@ form button {
   margin-inline: 10rem;
   position: relative;
   z-index: 100;
-
 }
 .button-form {
   display: flex;
   justify-content: space-evenly;
 }
-.button-form .q{
-width: 15%
+.button-form .q {
+  width: 15%;
 }
 .thxbtn {
   display: inline-block;
@@ -234,21 +250,21 @@ width: 15%
   padding: 2rem;
   margin-top: 2rem;
 }
-.thanksTitle{
-    z-index: 100;  
-    position: relative;
-    background-color:white;
-    height:70px;
-    margin:3px;
+.thanksTitle {
+  z-index: 100;
+  position: relative;
+  background-color: white;
+  height: 70px;
+  margin: 3px;
 }
 .thxbtn:hover {
   background-color: #264143;
   color: white;
 }
-section .homeBtn{
-   display: block;
-    margin: auto;
-    width: 90px;
+section .homeBtn {
+  display: block;
+  margin: auto;
+  width: 90px;
 }
 section:nth-child(1) button:hover {
   background-color: #f2ebe9;

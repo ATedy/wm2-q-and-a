@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
-      <div>
+      <div className="searchContainer">
         <Search />
         <button type="submit" onClick={() => history.push('/SearchAnswers')}>
           Search
@@ -35,12 +35,14 @@ const NavBar = () => {
 
             </p>
             <button
+            className="btnLogOut"
               onClick={() => {
                 Auth.logout();
                 history.push('/');
               }}
             >
               Log Out{' '}
+              
             </button>
           </>
         )}

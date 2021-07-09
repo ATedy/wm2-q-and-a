@@ -87,7 +87,7 @@ export function Home() {
                 className="list-group-item list-group-item-action"
               >
                 {parse(question.title)}
-                <span>{question.created_at.slice(0, 10)}</span>
+                <span><i>Date: {question.created_at.slice(0, 10)}</i></span>
               </li>
             ))}
           </ul>
