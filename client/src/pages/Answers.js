@@ -1,27 +1,13 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import React from 'react';
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
+import {SearchResultContext} from "../context/SearchResultContext";
 
 const OpenQuestions = () => {
+   const {questions, answers, setQuestions, setAnswers} = useContext(SearchResultContext);
       let history = useHistory();
-  const [questions, setQuestions] = useState([]);
-   const [answers, setAnswers] = useState([]);
-  useEffect(async () => {
-    try {
-      const questions = await fetch('/api/questions');
-      const answers = await fetch('/api/answers');
-       const questionsUnpacked = await questions.json()
-       const answersUnpacked = await answers.json();
-      setQuestions(questionsUnpacked);
-      setAnswers(answersUnpacked);
-
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
-
   return (
     <section>
       <header className="header">

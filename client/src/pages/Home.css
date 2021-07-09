@@ -104,7 +104,6 @@ section button {
   margin-inline: 20rem;
 }
 section:nth-child(1) {
-  background-color: #e99f4c;
   z-index: 100;
 }
 section:nth-child(1) button {

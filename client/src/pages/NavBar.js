@@ -1,24 +1,24 @@
-import React from "react";
-import {Link, useHistory} from "react-router-dom";
-import Auth from "../utility/Auth";
+import React from 'react';
+import {Link, useHistory} from 'react-router-dom';
+import Auth from '../utility/Auth';
+import Search from './Search';
 
 const NavBar = () => {
   let history = useHistory();
   let userName = localStorage.getItem("email");
   let trimmedName = userName.replace('@gmail.com', '');
-  console.log(userName);
   return (
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
       <div>
-        <input type="text" placeholder="Search.." className="prompt" />
-        <button type="submit">Search</button>
+      <Search />
+        <button type="submit" onClick={() => history.push('/answers')}>Search</button>
         <i className="search icon"></i>
       </div>
       <div>
         {!Auth.isAuthorized() ? (
           <>
-            {" "}
+            {' '}
             <Link className="mr-3 navLinks" to="/SignUp">
               Sign Up
             </Link>
@@ -31,14 +31,13 @@ const NavBar = () => {
             <p>
               Welcome {trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1)}
             </p>
-
             <button
               onClick={() => {
                 Auth.logout();
-                history.push("/");
+                history.push('/');
               }}
             >
-              Log Out{" "}
+              Log Out{' '}
             </button>
           </>
         )}
@@ -46,5 +45,4 @@ const NavBar = () => {
     </nav>
   );
 };
-
 export default NavBar;

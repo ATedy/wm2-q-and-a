@@ -2,9 +2,13 @@ import {useHistory, useParams} from 'react-router-dom';
 import React, {useState} from 'react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {CKEditor} from '@ckeditor/ckeditor5-react';
+import ImgurUploaderInit from 'ckeditor5-imgur-uploader';
 
 
 const AnswerForm = () => {
+    const ImgurUploader = ImgurUploaderInit({
+      clientID: 'b1bdfd84072fbe7',
+    });
   let history = useHistory();
   let { questionId } = useParams();
   const [title, setTitle] = useState('');
@@ -52,10 +56,10 @@ const AnswerForm = () => {
             <CKEditor
               editor={ClassicEditor}
               data={data}
-              onReady={(editor) => {
-                console.log(editor);
-              }}
               onChange={handleData}
+              config={{
+                extraPlugins: [ImgurUploader],
+              }}
             />
           </div>
         </form>

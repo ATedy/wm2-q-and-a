@@ -10,31 +10,27 @@ import moment from "moment";
 export function Home() {
   let history = useHistory();
   const [latestQuestions, setLatestQuestions] = useState([]);
-  // const [filteredQuestions, setFilteredQuestions] = useState([]);
 
-  useEffect(async () => {
-    try {
-      const res = await fetch("/api/questions");
-      const data = await res.json();
-      console.log(data);
-      console.log(data.length);
-      if (data.length < 5) {
-        setLatestQuestions(data);
-        console.log(data);
-      } else {
-        let i = 0;
-        const latestArr = [];
-        while (i < 4) {
-          latestArr.push(data[data.length - 1 - i]);
-          i = i + 1;
-        }
-        console.log(latestArr);
-        setLatestQuestions(latestArr);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+ useEffect(async () => {
+   try {
+     const res = await fetch('/api/questions');
+     const data = await res.json();
+     if (data.length < 5) {
+       setLatestQuestions(data);
+     } else {
+       let i = 0;
+       const latestArr = [];
+       while (i < 4) {
+         latestArr.push(data[data.length - 1 - i]);
+         i = i + 1;
+       }
+       setLatestQuestions(latestArr);
+     }
+   } catch (error) {
+     console.log(error);
+   }
+ }, []);
+
   return (
     <div className="wrapper">
       <NavBar />
@@ -48,7 +44,7 @@ export function Home() {
           <p>All you need to do is ask</p>
           <Link
             className="questionLinks"
-            to={Auth.isAuthorized() ? "/QuestionsForm" : "/Login"}
+            to={Auth.isAuthorized() ? '/QuestionsForm' : '/Login'}
           >
             <button className="btn-center">Ask Question</button>
           </Link>
@@ -73,7 +69,7 @@ export function Home() {
           <p>Have a look through all the answers</p>
           <Link
             className="questionLinks"
-            to={Auth.isAuthorized() ? "/Answers" : "/Login"}
+            to={Auth.isAuthorized() ? '/Answers' : '/Login'}
           >
             <button className="btn-center">All Answers</button>
           </Link>
