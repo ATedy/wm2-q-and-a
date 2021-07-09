@@ -6,7 +6,7 @@ import Search from './Search';
 const NavBar = () => {
   let history = useHistory();
   let userName = localStorage.getItem("email");
-  let trimmedName = userName.replace('@gmail.com', '');
+  // let trimmedName = userName.replace('@gmail.com', '');
   return (
     <nav className="navBar">
       <p className="logoName">Q U E S T</p>
@@ -29,7 +29,7 @@ const NavBar = () => {
         ) : (
           <>
             <p>
-              Welcome {trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1)}
+              Welcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
             </p>
             <button
               onClick={() => {
