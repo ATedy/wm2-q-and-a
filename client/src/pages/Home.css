@@ -2,28 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
 }
 .logo {
   width: 100px;
 }
-.wrapper{
-position: relative;
-  z-index:100;
-   margin:0;
-  padding:0;
+.wrapper {
+  position: relative;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
   width: 100%;
-min-height: fit-content;
+  min-height: fit-content;
 }
-.abody{
- background-color: rgb(23, 35, 65);
+.abody {
+  background-color: rgb(23, 35, 65);
   color: #f9fcf8;
- padding: 30px;
- border: 3px solid black;
- margin: 30px;
-  z-index:100;
-width:80%;
-margin-left: 5rem;
+  padding: 30px;
+  border: 3px solid black;
+  margin: 30px;
+  z-index: 100;
+  width: 80%;
+  margin-left: 5rem;
 }
 #root > main {
   z-index: 100;
@@ -44,7 +43,8 @@ margin-left: 5rem;
   width: 1000px;
   color: #264143;
 }
-.list-group-item, list-group-item-action {
+.list-group-item,
+list-group-item-action {
   background-color: #264143;
   color: white;
   border: 2px solid white;
@@ -62,15 +62,15 @@ body {
 .sectionContainer {
   margin: 2em auto;
   width: 80%;
-  background-color: #E99F4C;
+  background-color: #e99f4c;
   color: black;
   padding: 50px;
-  border: 2px solid #FFEEDB;
-  z-index:100;
+  border: 2px solid #ffeedb;
+  z-index: 100;
 }
-.answeredSectionContainer{
-   background-color: #E99F4C;
-   color: black;
+.answeredSectionContainer {
+  background-color: #e99f4c;
+  color: black;
   padding: 50px;
 
   width: 80%;
@@ -173,31 +173,31 @@ form button {
   max-width: 1200px;
 }
 
-.btn{
-    display:inline-block;
-    text-align: center;
-    width: 39%;
-    background-color:#e99f4c;
-    border: 3px solid #f2ebe9;
-    color:black;
-    margin-left: 5rem;
-    margin-inline: 10rem;
-    position: relative;
-    z-index:100;
+.btn {
+  display: inline-block;
+  text-align: center;
+  width: 39%;
+  background-color: #e99f4c;
+  border: 3px solid #f2ebe9;
+  color: black;
+  margin-left: 5rem;
+  margin-inline: 10rem;
+  position: relative;
+  z-index: 100;
 }
-.thxbtn{
-    display:inline-block;
-    text-align: center;
-    justify-content: center;
-    width: 40%;
-    background-color:#e99f4c;
-    border: 3px solid #f2ebe9;
-    color:black;
-    margin-left: 20rem;
-    position: relative;
-    z-index:100;
-    padding: 2rem;
-    margin-top: 2rem;
+.thxbtn {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+  background-color: #e99f4c;
+  border: 3px solid #f2ebe9;
+  color: black;
+  margin-left: 20rem;
+  position: relative;
+  z-index: 100;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 .thxbtn:hover {
   background-color: #264143;
@@ -205,48 +205,45 @@ form button {
 }
 section:nth-child(1) button:hover {
   background-color: #f2ebe9;
-  color:black; 
-
+  color: black;
 }
 section:nth-child(3) button:hover {
   background-color: #f2ebe9;
-  color:black; 
-
-
+  color: black;
 }
-section:nth-child(2) button:hover{
-   background-color: #e99f4c;
-  color:black; 
+section:nth-child(2) button:hover {
+  background-color: #e99f4c;
+  color: black;
 }
 .btn:hover {
   background-color: #264143;
   color: white;
 }
-.openlinks:hover{
-    background-color: #264143;
+.openlinks:hover {
+  background-color: #264143;
   color: white;
 }
-.things{
+.things {
   margin: 2% auto;
   width: 100%;
   padding: 30px;
   list-style-type: none;
   position: flex;
   justify-content: space-evenly;
-   position: relative;
-  z-index:100;
+  position: relative;
+  z-index: 100;
 }
 .what {
   background-color: #f2ebe9;
   color: black;
- padding: 30px;
- border: 3px solid black;
- margin: 30px;
-  z-index:100;
-width:80%;
-margin-left: 5rem;
+  padding: 30px;
+  border: 3px solid black;
+  margin: 30px;
+  z-index: 100;
+  width: 80%;
+  margin-left: 5rem;
 }
-.openQTitle{
+.openQTitle {
   text-align: center;
   font: bold 16px/2 fantasy;
   font-size: 55px;
@@ -256,10 +253,10 @@ margin-left: 5rem;
   color: black;
 }
 
-header{
-  background-color:lightcyan;
+header {
+  background-color: lightcyan;
 }
-.list-footer{
+.list-footer {
   width: 100%;
   height: 6rem;
   background-color: #264143;
@@ -268,7 +265,7 @@ header{
   margin: 0;
   padding: 0;
 }
-.list-footer p{
+.list-footer p {
   color: aliceblue;
 }
 .list {
@@ -284,17 +281,17 @@ header{
   margin-top: 1em;
   height: 100%;
 }
-.copyright{
+.copyright {
   color: white;
-  margin-top: 2em ;
+  margin-top: 2em;
 }
 .ui icon-input {
   flex-direction: column;
   padding-left: 100px;
   border-radius: 10px;
 }
-.navBar{
-width: 100%;
+.navBar {
+  width: 100%;
   padding: 1%;
   display: flex;
   justify-content: space-between;
@@ -305,7 +302,6 @@ width: 100%;
   background-color: #264143;
   margin-bottom: 3em;
   @media (min-width: 750px) {
-
   }
 }
 .navBar p,
@@ -321,18 +317,18 @@ width: 100%;
 }
 .search {
   display: grid;
-grid-template-columns: 1fr 1fr;
-place-items: start;
-margin: 1em 0 0 2em;
+  grid-template-columns: 1fr 1fr;
+  place-items: start;
+  margin: 1em 0 0 2em;
 }
 .login {
   margin-right: 2em;
 }
-.search-bar{
-margin-left: -3em;
+.search-bar {
+  margin-left: -3em;
 }
-.textarea-style{
-  border:  3px solid #264143;
+.textarea-style {
+  border: 3px solid #264143;
   margin: 0.5em;
   padding: 1.5rem;
 }
@@ -350,18 +346,24 @@ margin-left: -3em;
   flex-direction: row;
   background-color: lightgray;
 }
-.button-form:hover{
+.button-form:hover {
   background-color: white;
   color: black;
 }
-.cancel{
+.cancel {
   width: 30%;
   cursor: pointer;
   display: inline-block;
   padding: 0.6em;
-
 }
-.cancel:hover{
+.cancel:hover {
   background-color: rgb(196, 233, 238);
   border-radius: 6px;
+}
+.list-group-item p {
+  display: inline;
+  text-align: left;
+}
+.list-group-item span {
+  float: right;
 }
