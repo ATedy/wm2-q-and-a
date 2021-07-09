@@ -142,6 +142,7 @@ section:nth-child(2) button {
 ul li {
   cursor: pointer;
 }
+
 .loginContainer,
 .signUpContainer {
   width: 30%;
@@ -186,11 +187,17 @@ form button {
   padding: 10px;
   max-width: 1200px;
 }
-.butn{
+.answerBtns{
  display: flex;
- width: 13%;
+ width: 70%;
  justify-content: center;
+ padding: 2rem;
    
+}
+
+.butn{
+ padding: 0.5rem;
+ width: 200%;
 }
 
 .btn {
@@ -204,6 +211,14 @@ form button {
   margin-inline: 10rem;
   position: relative;
   z-index: 100;
+
+}
+.button-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-form .q{
+width: 15%
 }
 .thxbtn {
   display: inline-block;
@@ -213,15 +228,27 @@ form button {
   background-color: #e99f4c;
   border: 3px solid #f2ebe9;
   color: black;
-  margin-left: 20rem;
+  margin-left: 30rem;
   position: relative;
   z-index: 100;
   padding: 2rem;
   margin-top: 2rem;
 }
+.thanksTitle{
+    z-index: 100;  
+    position: relative;
+    background-color:white;
+    height:70px;
+    margin:3px;
+}
 .thxbtn:hover {
   background-color: #264143;
   color: white;
+}
+section .homeBtn{
+   display: block;
+    margin: auto;
+    width: 90px;
 }
 section:nth-child(1) button:hover {
   background-color: #f2ebe9;

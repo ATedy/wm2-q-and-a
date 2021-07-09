@@ -63,6 +63,7 @@ const AnswerForm = () => {
             />
           </div>
         </form>
+        <div className="answerBtns">
         <button className="butn" type="submit" onClick={handleSubmit}>
           Answer!
         </button>
@@ -73,6 +74,7 @@ const AnswerForm = () => {
         >
           Cancel
         </button>
+        </div>
       </div>
     </section>
   );
