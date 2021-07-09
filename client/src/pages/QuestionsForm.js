@@ -82,10 +82,10 @@ const QuestionsForm = (props) => {
         />
       </form>
       <div className="button-form">
-        <button className="btn" type="submit" onClick={handleSubmit}>
+        <button className="btn q" type="submit" onClick={handleSubmit}>
           Ask!
         </button>
-        <button className="btn" type="submit" onClick={() => history.push('/')}>
+        <button className="btn q" type="submit" onClick={() => history.push('/')}>
           Cancel
         </button>
       </div>
