@@ -5,7 +5,7 @@ import Auth from "../utility/Auth";
 const NavBar = () => {
   let history = useHistory();
   let userName = localStorage.getItem("email");
-  let trimmedName = userName.replace('@gmail.com', '');
+  // let userName = userName.replace('@gmail.com', '');
   console.log(userName);
   return (
     <nav className="navBar">
@@ -29,7 +29,7 @@ const NavBar = () => {
         ) : (
           <>
             <p>
-              Welcome {trimmedName.charAt(0).toUpperCase() + trimmedName.slice(1)}
+              Welcome {userName.charAt(0).toUpperCase() + userName.slice(1)}
             </p>
 
             <button
