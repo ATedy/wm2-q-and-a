@@ -11,6 +11,7 @@ if (process.env.DATABASE_URL) {
     },
   };
 } else {
+  
   // local
 
   config = {
