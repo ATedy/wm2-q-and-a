@@ -8,7 +8,7 @@ const signUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emptyFields, setEmptyFields] = useState(false);
+  // const [emptyFields, setEmptyFields] = useState(false);
   const [shortName, setShortName] = useState(false);
   const [shortPassword, setShortPassword] = useState(false);
 

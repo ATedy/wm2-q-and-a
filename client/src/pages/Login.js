@@ -10,10 +10,12 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const login = (user) => {
+    // fetching from the server
     axios
       .post("/api/login", user)
       .then((response) => {
         Auth.setToken(response.data.token);
+        // for welcoming the user
         localStorage.setItem("email", response.data.email);
         history.push("/");
       })
